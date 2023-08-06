@@ -13,6 +13,7 @@ export const GlobalStyles = createGlobalStyle`
     }
     h4 {
       color: black;
+      margin: 0;
     }
     p{
       color: black;

@@ -12,8 +12,10 @@ const Hero = () => {
       <HeroSection>
         {portadas.map((portada) => (
           <Portada key={portada.id} style= {{backgroundImage: `url(${portada.img})`}}>
-            <PortadaContenedor >
+            <PortadaContenedor  >
+              <div> 
               <LinkHero> {portada.name} </LinkHero>
+              </div>
             </PortadaContenedor>
           </Portada>
         ))}

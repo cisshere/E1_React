@@ -1,10 +1,8 @@
 import styled from "styled-components";
-import Carousel from "nuka-carousel";
 
 export const ImagenCarousel = styled.img`
-  width: 15rem;
-  height: 15rem;
-  display: flex;
+  width: 70%;
+  margin: auto;
 `;
 
 export const DescripcionProducto = styled.p`
@@ -21,10 +19,10 @@ export const ProductoContenedor = styled.div`
   gap: 0.5rem;
 `;
 
-export const CarouselStyled = styled(Carousel)`
+/* export const CarouselStyled = styled(Carousel)`
   margin: auto;
   background-color: white;
   max-width: 50rem;
   width: 100%;
   box-sizing: border-box;
-`;
+`; */

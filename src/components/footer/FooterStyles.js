@@ -10,6 +10,11 @@ export const FooterContenedor = styled.section`
   gap: 3rem;
   margin-top: 3rem;
   padding: 2rem;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 `;
 
 export const BasesCondiciones = styled.div`

@@ -8,15 +8,19 @@ export const HeroSection = styled.section`
 
   @media (max-width: 800px) {
     flex-direction: column;
-  }
+  } 
 `;
 
 export const Portada = styled.div`
   background-size: cover;
-  background-position: center;
+  background-position: unset;
   height: 23rem;
   width: 25rem;
   margin: 1rem;
+
+  @media (max-width: 800px) {
+    width: 90%;
+  }
 `;
 
 export const PortadaContenedor = styled.div`
