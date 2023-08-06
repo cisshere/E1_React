@@ -13,20 +13,16 @@ export const HeroSection = styled.section`
 
 export const Portada = styled.div`
   background-size: cover;
-  background-position: unset;
-  height: 23rem;
-  width: 25rem;
+  background-position: center;
+  height: 20rem;
+  width: 90%;
   margin: 1rem;
-
-  @media (max-width: 800px) {
-    width: 90%;
-  }
 `;
 
 export const PortadaContenedor = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 18rem;
+  margin-top: 15rem;
 `;
 
 export const LinkHero = styled.a`

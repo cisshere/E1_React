@@ -10,15 +10,15 @@ const Hero = () => {
 
   return (
       <HeroSection>
+        
         {portadas.map((portada) => (
           <Portada key={portada.id} style= {{backgroundImage: `url(${portada.img})`}}>
-            <PortadaContenedor  >
-              <div> 
+            <PortadaContenedor >
               <LinkHero> {portada.name} </LinkHero>
-              </div>
             </PortadaContenedor>
           </Portada>
         ))}
+        
       </HeroSection>
   );
 };
