@@ -1,0 +1,29 @@
+import styled from "styled-components";
+
+export const FooterContenedor = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  box-sizing: border-box;
+  color: white;
+  background-color: #be7bc3;
+  gap: 3rem;
+  margin-top: 3rem;
+  padding: 2rem;
+`;
+
+export const BasesCondiciones = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+`;
+
+export const Redes = styled(BasesCondiciones)``;
+
+export const RedesSociales = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+`;
