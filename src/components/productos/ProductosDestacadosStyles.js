@@ -7,22 +7,28 @@ export const ImagenCarousel = styled.img`
 
 export const DescripcionProducto = styled.p`
   text-align: center;
-  margin: 0;
+  margin: 6px;
   padding: 0;
 `;
 
-export const ProductoContenedor = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 2.3rem;
-  gap: 0.5rem;
+export const DescripcionProductoNombre = styled(DescripcionProducto)`
+  font-size: 1.1rem;
+  font-weight: bold;
 `;
 
-/* export const CarouselStyled = styled(Carousel)`
-  margin: auto;
-  background-color: white;
-  max-width: 50rem;
-  width: 100%;
-  box-sizing: border-box;
-`; */
+export const ProductoContenedor = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.3rem;
+    align-items: center;
+`;
+
+export const BtnComprarProducto = styled.button`
+  background-color: #f7d2f5;
+  border-radius: 0.3rem;
+  padding: 0.3rem 1.5rem;
+  letter-spacing: 1px;
+  margin: 0.5rem 0;
+  cursor: pointer;
+`;

@@ -6,7 +6,7 @@ export const FooterContenedor = styled.section`
   justify-content: center;
   box-sizing: border-box;
   color: white;
-  background-color: #be7bc3;
+  background-color: #d0acd3;
   gap: 3rem;
   margin-top: 3rem;
   padding: 2rem;

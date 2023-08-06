@@ -3,6 +3,8 @@ import {
   ImagenCarousel,
   DescripcionProducto,
   ProductoContenedor,
+  DescripcionProductoNombre,
+  BtnComprarProducto,
 } from "./ProductosDestacadosStyles";
 import Slider from "react-slick";
 import productList from "./Dato";
@@ -14,9 +16,9 @@ const ProductListSeccion = () => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
-    autoplay: true,
+    autoplay: false,
     arrows: true,
-    
+
     responsive: [
       {
         breakpoint: 1100,
@@ -54,9 +56,10 @@ const ProductListSeccion = () => {
         {productosDestacados.map((producto) => (
           <ProductoContenedor key={producto.id}>
             <ImagenCarousel src={producto.img} alt={producto.nombre} />
-            <DescripcionProducto> {producto.nombre} </DescripcionProducto>
+            <DescripcionProductoNombre> {producto.nombre} </DescripcionProductoNombre>
             <DescripcionProducto> $ {producto.precio} </DescripcionProducto>
             <DescripcionProducto> {producto.metal} </DescripcionProducto>
+            <BtnComprarProducto>Comprar</BtnComprarProducto>
           </ProductoContenedor>
         ))}
       </Slider>
