@@ -5,3 +5,10 @@
 .slick-prev:before, .slick-next:before {
      color: black !important;
 }
+
+@media(min-width:1368px){
+
+    .contenedorCarousel{
+        margin: 0 15%;
+    }
+}

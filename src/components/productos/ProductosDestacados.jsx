@@ -50,7 +50,7 @@ const ProductListSeccion = () => {
   );
 
   return (
-    <div className="contenedorCarousel">
+    <section className="contenedorCarousel">
       <h1 style={{ textAlign: "center" }}>Productos Destacados</h1>
       <Slider {...configuracion}>
         {productosDestacados.map((producto) => (
@@ -63,7 +63,7 @@ const ProductListSeccion = () => {
           </ProductoContenedor>
         ))}
       </Slider>
-    </div>
+    </section>
   );
 };
 

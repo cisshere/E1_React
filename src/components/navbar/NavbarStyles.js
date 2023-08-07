@@ -11,6 +11,11 @@ export const NavbarContainerStyled = styled.nav`
   justify-content: space-between;
   background-color: #dcd0e3;
   padding: 0.3rem 1rem;
+  
+  @media(min-width:1368px){
+    justify-content: center;
+    gap: 8rem;
+  }
 `;
 
 export const MenuStyled = styled.div`
@@ -34,8 +39,14 @@ export const LogoMarca = styled.img`
   width: 10rem;
   margin-right: 20%;
 
+  @media(min-width:1368px){
+    margin: 0;
+  }
+
   @media (max-width: 940px) {
     margin: 0;
+
+  
   }
 `;
 

@@ -9,6 +9,10 @@ export const HeroSection = styled.section`
   @media (max-width: 800px) {
     flex-direction: column;
   }
+
+  @media(min-width:1368px){
+    margin: 0 15%;
+  }
 `;
 
 export const Portada = styled.div`
