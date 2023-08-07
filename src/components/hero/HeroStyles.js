@@ -8,7 +8,7 @@ export const HeroSection = styled.section`
 
   @media (max-width: 800px) {
     flex-direction: column;
-  } 
+  }
 `;
 
 export const Portada = styled.div`
@@ -17,6 +17,11 @@ export const Portada = styled.div`
   height: 20rem;
   width: 90%;
   margin: 1rem;
+  background-repeat: no-repeat;
+
+  @media(max-width: 800px){
+    background-size: contain;
+  }
 `;
 
 export const PortadaContenedor = styled.div`
