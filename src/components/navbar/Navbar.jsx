@@ -12,7 +12,7 @@ import {
 } from "./NavbarStyles";
 import { NavItem } from "./components/nav-item";
 import { BiSolidUserRectangle } from "react-icons/bi";
-import { FaShopify } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 import { SlMenu } from "react-icons/sl";
 
 const Navbar = () => {
@@ -39,7 +39,7 @@ const Navbar = () => {
             <BiSolidUserRectangle />
           </LinkContainerInicioSesion>
           <ButtonCart>
-            <FaShopify />
+            <FaShoppingCart />
           </ButtonCart>
         </BtnNavbar>
       </NavbarContainerStyled>
