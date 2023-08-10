@@ -3,47 +3,63 @@ import styled from "styled-components";
 export const HeroSection = styled.section`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   padding-top: 6rem;
+  gap: 4rem;
 
   @media (max-width: 800px) {
     flex-direction: column;
   }
 
-  @media(min-width:1368px){
+  @media (min-width: 1368px) {
     margin: 0 15%;
   }
 `;
 
-export const Portada = styled.div`
-  background-size: cover;
-  background-position: center;
-  height: 20rem;
-  width: 90%;
-  margin: 1rem;
-  background-repeat: no-repeat;
+export const ContenedorHero = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: #d1bad0;
+  border-radius: 2rem;
+  padding: 2rem;
 
-  @media(max-width: 800px){
-    background-size: contain;
+  @media(max-width:420px){
+    padding: 2rem 0;
+  }
+
+  @media(max-width:710px){
+    flex-direction: column;
   }
 `;
 
-export const PortadaContenedor = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 15rem;
+export const ImagenHero = styled.img`
+  width: 20rem;
+  border-radius: 1rem;
+  
+  @media(max-width:420px){
+    width:90%;
+  }
 `;
 
-export const LinkHero = styled.a`
-  padding: 1rem;
-  background-color: #c38fb4;
-  border-radius: 0.5rem;
+export const ContenedorDescripcion = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+`;
+
+export const Descripcion = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: aliceblue;
+  border-radius: 1rem;
+  width: 17rem;
 
   &:hover {
     transition-duration: 500ms;
-    padding: 1.3rem 1.5rem;
-    background-color: #8f587f;
-    color: white;
-    cursor: pointer;
-  }
+    background-color: #f3cded;
+    }
 `;

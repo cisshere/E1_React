@@ -1,8 +1,8 @@
 import { createContext, useReducer } from "react";
 
- const Contexto = createContext();
+const Context = createContext();
 
- const ContextoProvider = ({ children }) => {
+const MenuDespegable = ({ children }) => {
   const initialState = {
     isMenuOpen: false,
   };
@@ -22,12 +22,10 @@ import { createContext, useReducer } from "react";
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
-    <Contexto.Provider
-      value={{ state, dispatch }}
-    >
+    <Context.Provider value={{ state, dispatch }}>
       {children}
-    </Contexto.Provider>
+    </Context.Provider>
   );
 };
 
-export {Contexto, ContextoProvider};
+export { Context, MenuDespegable };

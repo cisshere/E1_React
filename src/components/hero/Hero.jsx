@@ -1,25 +1,39 @@
 import React from "react";
-import { HeroSection, Portada, PortadaContenedor, LinkHero } from "./HeroStyles";
+import {
+  HeroSection,
+  ContenedorHero,
+  ImagenHero,
+  ContenedorDescripcion,
+  Descripcion,
+} from "./HeroStyles";
+import { FiPackage } from "react-icons/fi";
+import { BsFillCreditCard2BackFill } from "react-icons/bs";
+import { MdOutlineSecurityUpdateGood } from "react-icons/md";
 
 const Hero = () => {
-  const portadas = [
-    { id: 1, img: "./assets/img/joyas/portadas/aros-portada.png", name: "Aros" },
-    { id: 2, img: "./assets/img/joyas/portadas/collares-portada.png", name: "Collares" },
-    { id: 3, img: "./assets/img/joyas/portadas/anillos-portada.png", name: "Anillos" },
-  ];
-
   return (
-      <HeroSection>
-        
-        {portadas.map((portada) => (
-          <Portada key={portada.id} style= {{backgroundImage: `url(${portada.img})`}}>
-            <PortadaContenedor >
-              <LinkHero> {portada.name} </LinkHero>
-            </PortadaContenedor>
-          </Portada>
-        ))}
-        
-      </HeroSection>
+    <HeroSection>
+      <ContenedorHero>
+        <ImagenHero src="./assets/img/joyas/portadas/anillos-portada.png" />
+
+        <ContenedorDescripcion>
+          <Descripcion>
+            <FiPackage />
+            <p>Envios a todo el pais!</p>
+          </Descripcion>
+
+          <Descripcion>
+            <BsFillCreditCard2BackFill />
+            <p>Aceptamos todas las tarjetas</p>
+          </Descripcion>
+
+          <Descripcion>
+            <MdOutlineSecurityUpdateGood />
+            <p>Tu compra 100% asegurada</p>
+          </Descripcion>
+        </ContenedorDescripcion>
+      </ContenedorHero>
+    </HeroSection>
   );
 };
 

@@ -31,4 +31,8 @@ export const BtnComprarProducto = styled.button`
   letter-spacing: 1px;
   margin: 0.5rem 0;
   cursor: pointer;
+
+  @media(max-width: 350px){
+    margin-bottom: 2rem;
+  }
 `;

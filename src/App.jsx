@@ -5,17 +5,18 @@ import Navbar from "./components/navbar/Navbar";
 import Hero from "./components/hero/Hero";
 import ProductListSeccion from "./components/productos/ProductosDestacados";
 import FooterSeccion from "./components/footer/Footer";
-import { ContextoProvider } from "./components/navbar/MenuContext";
+import { MenuDespegable } from "./components/navbar/MenuContext";
 
 function App() {
   return (
     <>
-      <ContextoProvider>
-        <Navbar />
+      <MenuDespegable>
+        <Navbar /> 
+         </MenuDespegable>
         <Hero />
         <ProductListSeccion />
         <FooterSeccion />
-      </ContextoProvider>
+    
     </>
   );
 }

@@ -11,8 +11,8 @@ export const NavbarContainerStyled = styled.nav`
   justify-content: space-between;
   background-color: #dcd0e3;
   padding: 0.3rem 1rem;
-  
-  @media(min-width:1368px){
+
+  @media (min-width: 1368px) {
     justify-content: center;
     gap: 8rem;
   }
@@ -31,21 +31,20 @@ export const NavListPrincipal = styled.ul`
 
   @media (max-width: 940px) {
     display: none;
-  }
 
-  &.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 79%;
-    left: 0px;
-    background-color: #dcd0e3;
-    width: 20%;
-    z-index: 1;
-    align-items: center;
-    gap: 3rem;
-    padding: 1rem;
-    
+    &.open {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 79%;
+      left: 0px;
+      background-color: #dcd0e3;
+      width: 13rem;
+      z-index: 1;
+      align-items: center;
+      gap: 3rem;
+      padding: 1rem;
+    }
   }
 `;
 
@@ -54,14 +53,12 @@ export const LogoMarca = styled.img`
   width: 10rem;
   margin-right: 20%;
 
-  @media(min-width:1368px){
+  @media (min-width: 1368px) {
     margin: 0;
   }
 
   @media (max-width: 940px) {
     margin: 0;
-
-  
   }
 `;
 
