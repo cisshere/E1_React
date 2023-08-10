@@ -29,7 +29,8 @@ const Navbar = () => {
           <ButtonMenu onClick={() => dispatch({ type: "toggle_menu" })}>
             <SlMenu />
           </ButtonMenu>
-          <NavListPrincipal className={state.isMenuOpen ? "open" : ""}>
+          <NavListPrincipal className={state.isMenuOpen ? "open" : ""}
+          >
 
             {navLinks.map((item, index) => (
               <NavItem key={index} item={item} />

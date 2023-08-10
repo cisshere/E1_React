@@ -14,7 +14,7 @@ const Hero = () => {
   return (
     <HeroSection>
       <ContenedorHero>
-        <ImagenHero src="./assets/img/joyas/portadas/anillos-portada.png" />
+        <ImagenHero src="./assets/img/joyas/anillos-portada.png" />
 
         <ContenedorDescripcion>
           <Descripcion>
