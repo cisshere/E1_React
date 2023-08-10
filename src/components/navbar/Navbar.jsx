@@ -1,4 +1,5 @@
 import React from "react";
+import { useContext } from "react";
 import {
   HeaderContainerStyled,
   NavbarContainerStyled,
@@ -14,18 +15,21 @@ import { NavItem } from "./components/nav-item";
 import { BiSolidUserRectangle } from "react-icons/bi";
 import { FaShoppingCart } from "react-icons/fa";
 import { SlMenu } from "react-icons/sl";
+import { Contexto } from "./MenuContext";
 
 const Navbar = () => {
   const navLinks = ["Inicio", "Productos", "Beneficios", "Contacto"];
+  
+  const {state, dispatch} = useContext(Contexto);
 
   return (
     <HeaderContainerStyled>
       <NavbarContainerStyled>
         <MenuStyled>
-          <ButtonMenu>
+          <ButtonMenu onClick={() => dispatch({ type: "toggle_menu" })}>
             <SlMenu />
           </ButtonMenu>
-          <NavListPrincipal>
+          <NavListPrincipal className={state.isMenuOpen ? "open" : ""}>
             {navLinks.map((item, index) => (
               <NavItem key={index} item={item} />
             ))}

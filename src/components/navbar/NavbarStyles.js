@@ -32,6 +32,21 @@ export const NavListPrincipal = styled.ul`
   @media (max-width: 940px) {
     display: none;
   }
+
+  &.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 79%;
+    left: 0px;
+    background-color: #dcd0e3;
+    width: 20%;
+    z-index: 1;
+    align-items: center;
+    gap: 3rem;
+    padding: 1rem;
+    
+  }
 `;
 
 export const LogoMarca = styled.img`
