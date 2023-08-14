@@ -10,17 +10,16 @@ import {
   ButtonCart,
   ButtonMenu,
   LogoMarca,
+  NavItem
 } from "./NavbarStyles";
-import { NavItem } from "./components/nav-item";
 import { BiSolidUserRectangle } from "react-icons/bi";
 import { FaShoppingCart } from "react-icons/fa";
 import { SlMenu } from "react-icons/sl";
 import { Context } from "./MenuContext";
 
 const Navbar = () => {
-  const navLinks = ["Inicio", "Productos", "Beneficios", "Contacto"];
-  
-  const {state, dispatch} = useContext(Context);
+
+  const { state, dispatch } = useContext(Context);
 
   return (
     <HeaderContainerStyled>
@@ -29,12 +28,13 @@ const Navbar = () => {
           <ButtonMenu onClick={() => dispatch({ type: "toggle_menu" })}>
             <SlMenu />
           </ButtonMenu>
-          <NavListPrincipal className={state.isMenuOpen ? "open" : ""}
-          >
+          <NavListPrincipal className={state.isMenuOpen ? "open" : ""}>
+             
+             <NavItem> Home </NavItem>
+             <NavItem> Productos </NavItem>
+             <NavItem> Beneficios </NavItem>
+             <NavItem> Contacto </NavItem>
 
-            {navLinks.map((item, index) => (
-              <NavItem key={index} item={item} />
-            ))}
           </NavListPrincipal>
         </MenuStyled>
 

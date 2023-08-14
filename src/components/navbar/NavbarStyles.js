@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const HeaderContainerStyled = styled.header`
   position: fixed;
@@ -47,6 +48,10 @@ export const NavListPrincipal = styled.ul`
     }
   }
 `;
+
+export const NavItem = styled(NavLink)`
+color : white;
+`
 
 export const LogoMarca = styled.img`
   height: 4.3rem;
