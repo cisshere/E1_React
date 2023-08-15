@@ -17,11 +17,11 @@ export const DescripcionProductoNombre = styled(DescripcionProducto)`
 `;
 
 export const ProductoContenedor = styled.div`
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 0.3rem;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 0.3rem;
+  align-items: center;
 `;
 
 export const BtnComprarProducto = styled.button`
@@ -32,7 +32,7 @@ export const BtnComprarProducto = styled.button`
   margin: 0.5rem 0;
   cursor: pointer;
 
-  @media(max-width: 350px){
+  @media (max-width: 350px) {
     margin-bottom: 2rem;
   }
 `;

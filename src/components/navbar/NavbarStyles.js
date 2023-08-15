@@ -50,7 +50,7 @@ export const NavListPrincipal = styled.ul`
 `;
 
 export const NavItem = styled(NavLink)`
-color : white;
+font-size: 1.3rem;
 `
 
 export const LogoMarca = styled.img`

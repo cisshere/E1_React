@@ -25,24 +25,23 @@ const ProductListSeccion = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-        }
+        },
       },
       {
         breakpoint: 800,
         settings: {
           slidesToShow: 2,
-          slidesToScroll: 2
-        }
+          slidesToScroll: 2,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const productosDestacados = productList.filter(
@@ -56,7 +55,9 @@ const ProductListSeccion = () => {
         {productosDestacados.map((producto) => (
           <ProductoContenedor key={producto.id}>
             <ImagenCarousel src={producto.img} alt={producto.nombre} />
-            <DescripcionProductoNombre> {producto.nombre} </DescripcionProductoNombre>
+            <DescripcionProductoNombre>
+              {producto.nombre}
+            </DescripcionProductoNombre>
             <DescripcionProducto> $ {producto.precio} </DescripcionProducto>
             <DescripcionProducto> {producto.metal} </DescripcionProducto>
             <BtnComprarProducto>Comprar</BtnComprarProducto>

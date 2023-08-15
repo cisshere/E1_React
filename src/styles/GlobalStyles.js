@@ -16,6 +16,7 @@ export const GlobalStyles = createGlobalStyle`
       margin: 0;
     }
     p{
+      margin: 0;
       color: black;
     }
     a {

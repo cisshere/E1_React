@@ -2,14 +2,8 @@ import styled from "styled-components";
 
 export const ContactSection = styled.section`
   display: flex;
-  align-items: center;
   justify-content: center;
   padding-top: 6rem;
-  gap: 4rem;
-
-  @media (max-width: 800px) {
-    flex-direction: column;
-  }
 
   @media (min-width: 1368px) {
     margin: 0 15%;
@@ -17,19 +11,26 @@ export const ContactSection = styled.section`
 `;
 
 export const ContenedorContact = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
   background-color: #d1bad0;
   border-radius: 2rem;
-  padding: 2rem;
+  padding: 2rem 5rem;
+`;
 
-  @media(max-width:420px){
-    padding: 2rem 0;
-  }
+export const Formulario = styled.form`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+`;
 
-  @media(max-width:710px){
-    flex-direction: column;
-  }
+export const SecctionForm = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const TextAreaStyle = styled.textarea`
+  resize: none;
+  padding: 0.9rem 0.9rem 2rem 0.9rem;
+  font-size: 1.2rem;
 `;

@@ -19,17 +19,17 @@ const Hero = () => {
         <ContenedorDescripcion>
           <Descripcion>
             <FiPackage />
-            <p>Envios a todo el pais!</p>
+            <p style={{padding:"1rem 0.2rem"}}>Envios a todo el pais!</p>
           </Descripcion>
 
           <Descripcion>
             <BsFillCreditCard2BackFill />
-            <p>Aceptamos todas las tarjetas</p>
+            <p style={{padding:"1rem 0.2rem"}}>Aceptamos todas las tarjetas</p>
           </Descripcion>
 
           <Descripcion>
             <MdOutlineSecurityUpdateGood />
-            <p>Tu compra 100% asegurada</p>
+            <p style={{padding:"1rem 0.2rem"}}>Tu compra 100% asegurada</p>
           </Descripcion>
         </ContenedorDescripcion>
       </ContenedorHero>
