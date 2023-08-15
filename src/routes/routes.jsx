@@ -15,6 +15,9 @@ const Routes = () => {
         <ReactDomRoutes>
           <Route path= '/' element={<Home />} />
           <Route path= 'contacto' element={<Contacto />} />
+
+
+          <Route path='*' element={<h2>Error!</h2>}  />
         </ReactDomRoutes>
       </Layout>
     </BrowserRouter>

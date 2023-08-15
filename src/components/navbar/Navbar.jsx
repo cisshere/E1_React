@@ -30,10 +30,10 @@ const Navbar = () => {
           </ButtonMenu>
           <NavListPrincipal className={state.isMenuOpen ? "open" : ""}>
              
-             <NavItem> Home </NavItem>
+             <NavItem to='/' > Home </NavItem>
              <NavItem> Productos </NavItem>
              <NavItem> Beneficios </NavItem>
-             <NavItem> Contacto </NavItem>
+             <NavItem to='Contacto' > Contacto </NavItem>
 
           </NavListPrincipal>
         </MenuStyled>
