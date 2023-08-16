@@ -1,5 +1,5 @@
 import React from "react";
-import { ContactSection, ContenedorContact,Formulario, SecctionForm, TextAreaStyle } from "./ContactoStyled";
+import { ContactSection, ContenedorContact,Formulario, SecctionForm, TextAreaStyle, InputStyle, Submit } from "./ContactoStyled";
 
 const Contacto = () => {
   return (
@@ -9,26 +9,26 @@ const Contacto = () => {
         <Formulario>
 
           <SecctionForm>
-            <label style={{fontWeight: "bold" }}>Nombre:</label>
-            <input type="text" name="nombre" style={{fontSize: "1.3rem"}} />
+            <label>Nombre:</label>
+            <InputStyle type="text" name="nombre" placeholder="Ingrese su nombre"/>
           </SecctionForm>
 
           <SecctionForm>
-            <label style={{fontWeight: "bold" }}>Apellido:</label>
-            <input type="text" name="apellido" style={{fontSize: "1.3rem"}} />
+            <label>Apellido:</label>
+            <InputStyle type="text" name="apellido" placeholder="Ingrese su apellido"/>
           </SecctionForm>
 
           <SecctionForm>
-            <label style={{fontWeight: "bold" }}>Email:</label>
-            <input type="email" name="email" style={{fontSize: "1.3rem"}} />
+            <label>Email:</label>
+            <InputStyle type="email" name="email" placeholder="Ingrese su email" />
           </SecctionForm>
 
           <SecctionForm>
-            <label style={{fontWeight: "bold" }}>Asunto:</label>
-            <TextAreaStyle name="asunto" />
+            <label>Asunto:</label>
+            <TextAreaStyle cols="30" rows="5" name="asunto" />
           </SecctionForm>
 
-          <button type="submit">Submit</button>
+          <Submit type="submit">Submit </Submit>
 
         </Formulario>
       </ContenedorContact>

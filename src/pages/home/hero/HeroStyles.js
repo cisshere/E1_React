@@ -4,7 +4,6 @@ export const HeroSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 6rem;
   gap: 4rem;
 
   @media (max-width: 800px) {

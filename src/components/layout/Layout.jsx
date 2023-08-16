@@ -2,7 +2,9 @@ import styled from "styled-components";
 import Navbar from "../navbar/Navbar";
 import { MenuDespegable } from "../navbar/MenuContext";
 
-const ContentContainerStyled = styled.div``;
+const ContainerStyle = styled.div`
+  padding-top: 6rem;
+`;
 
 function Layout({ children }) {
   return (
@@ -10,7 +12,7 @@ function Layout({ children }) {
       <MenuDespegable>
         <Navbar />
       </MenuDespegable>
-      <ContentContainerStyled>{children}</ContentContainerStyled>
+      <ContainerStyle>{children}</ContainerStyle>
     </>
   );
 }

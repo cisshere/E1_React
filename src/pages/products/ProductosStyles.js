@@ -4,7 +4,6 @@ export const ProductsSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 6rem;
   margin-bottom: 2rem;
   gap: 2rem;
 `;
@@ -26,34 +25,36 @@ export const BtnLista = styled.div`
 
 export const BtnCategoria = styled.button`
   font-weight: bold;
-  background-color: #f1bfff;
-  border-radius: 0.25rem;
+  background-color: #f7d2f5;
   padding: 0.5rem 1rem;
   cursor: pointer;
+
+  &:hover{
+    background-color: #e79ed8;
+  }
 `;
 
 export const ProductosContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.938rem;
-  margin: 0 6.5rem;
-  max-width: 1367px;
+  gap: 1rem;
+  margin: 0 2rem;
+  max-width: 1295px;
 `;
 
 export const Cart = styled.div`
   flex-direction: column;
   display: flex;
   text-align: center;
-  gap: 0.313rem;
+  gap: 0.3rem;
   margin: 1rem;
 `;
 
 export const ImgCart = styled.img`
   width: 12rem;
   height: 12rem;
-  margin: 0.75rem;
-  border-radius: 0.938rem;
+  margin: 0.7rem;
   object-fit: cover;
   cursor: pointer;
 `;
@@ -62,9 +63,12 @@ export const BtnComprar = styled.button`
   background-color: #f7d2f5;
   font-weight: bold;
   font-size: 0.9rem;
-  border-radius: 0.25rem;
-  padding: 0.25rem 1.438rem;
+  padding: 0.4rem 0rem;
   letter-spacing: 1px;
   margin-top: 0.3rem;
   cursor: pointer;
+
+  &:hover{
+    background-color: #e79ed8;
+  }
 `;
