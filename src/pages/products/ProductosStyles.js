@@ -18,12 +18,17 @@ export const BtnLista = styled.div`
   display: flex;
   justify-content: center;
   gap: 1rem;
+
+  @media(max-width: 500px){
+    flex-direction: column;
+  }
 `;
 
 export const BtnCategoria = styled.button`
-  padding: 0.4rem;
-  background-color: #f3b2ff;
+  font-weight: bold;
+  background-color: #f1bfff;
   border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
 `;
 
