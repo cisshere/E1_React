@@ -45,7 +45,6 @@ export const TextAreaStyle = styled.textarea`
 
 export const InputStyle = styled.input`
   text-align: center;
-  background: transparent;
   font-size: 1.125rem;
   color: black;
   padding: 0.25rem 2.3rem;
