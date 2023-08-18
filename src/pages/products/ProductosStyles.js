@@ -17,10 +17,8 @@ export const BtnLista = styled.div`
   display: flex;
   justify-content: center;
   gap: 1rem;
-
-  @media(max-width: 500px){
-    flex-direction: column;
-  }
+  flex-wrap: wrap;
+  
 `;
 
 export const BtnCategoria = styled.button`
