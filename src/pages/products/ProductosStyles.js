@@ -18,7 +18,6 @@ export const BtnLista = styled.div`
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
-  
 `;
 
 export const BtnCategoria = styled.button`
@@ -27,7 +26,7 @@ export const BtnCategoria = styled.button`
   padding: 0.5rem 1rem;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: #e79ed8;
   }
 `;
@@ -66,7 +65,7 @@ export const BtnComprar = styled.button`
   margin-top: 0.3rem;
   cursor: pointer;
 
-  &:hover{
+  &:hover {
     background-color: #e79ed8;
   }
 `;

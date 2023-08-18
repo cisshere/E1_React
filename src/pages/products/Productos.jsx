@@ -9,7 +9,7 @@ import {
   ImgCart,
   BtnComprar,
 } from "./ProductosStyles";
-import productList from "./ProductsList";
+import productList from "../../datos/DatoProductos";
 
 const ProductosSecction = () => {
   return (

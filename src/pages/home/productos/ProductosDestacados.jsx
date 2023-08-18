@@ -7,7 +7,7 @@ import {
   BtnComprarProducto,
 } from "./ProductosDestacadosStyles";
 import Slider from "react-slick";
-import productList from "./Dato";
+import productList from "../../../datos/DatoProductos";
 
 const ProductListSeccion = () => {
   const configuracion = {
