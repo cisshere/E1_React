@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Navbar from "../navbar/Navbar";
 import { MenuDespegable } from "../navbar/MenuContext";
+import FooterSeccion from "../footer/Footer";
 
 const ContainerStyle = styled.div`
   padding-top: 6rem;
@@ -13,6 +14,7 @@ function Layout({ children }) {
         <Navbar />
       </MenuDespegable>
       <ContainerStyle>{children}</ContainerStyle>
+      <FooterSeccion />
     </>
   );
 }
