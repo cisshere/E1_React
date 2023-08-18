@@ -40,7 +40,7 @@ export const ProductosContainer = styled.div`
   max-width: 1295px;
 `;
 
-export const Cart = styled.div`
+export const Card = styled.div`
   flex-direction: column;
   display: flex;
   text-align: center;

@@ -5,7 +5,7 @@ import {
   BtnLista,
   BtnCategoria,
   ProductosContainer,
-  Cart,
+  Card,
   ImgCart,
   BtnComprar,
 } from "./ProductosStyles";
@@ -23,13 +23,13 @@ const ProductosSecction = () => {
       </BtnLista>
       <ProductosContainer>
         {productList.map((producto, key) => (
-          <Cart key={key}>
+          <Card key={key}>
             <ImgCart src={producto.img} alt={producto.alt} />
             <p style={{fontWeight: "bold"}}>{producto.nombre}</p>
             <p>${producto.precio}</p>
             <p>{producto.metal}</p>
             <BtnComprar>Comprar</BtnComprar>
-          </Cart>
+          </Card>
         ))}
       </ProductosContainer>
     </ProductsSection>
