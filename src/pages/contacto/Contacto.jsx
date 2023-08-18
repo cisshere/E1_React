@@ -28,7 +28,7 @@ const Contacto = () => {
             <TextAreaStyle cols="30" rows="5" name="asunto" />
           </SecctionForm>
 
-          <Submit type="submit">Submit </Submit>
+          <Submit type="submit">Enviar</Submit>
 
         </Formulario>
       </ContenedorContact>

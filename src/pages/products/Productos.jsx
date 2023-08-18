@@ -25,7 +25,7 @@ const ProductosSecction = () => {
         {productList.map((producto, key) => (
           <Card key={key}>
             <ImgCart src={producto.img} alt={producto.alt} />
-            <p style={{fontWeight: "bold"}}>{producto.nombre}</p>
+            <p style={{ fontWeight: "bold" }}>{producto.nombre}</p>
             <p>${producto.precio}</p>
             <p>{producto.metal}</p>
             <BtnComprar>Comprar</BtnComprar>
