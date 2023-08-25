@@ -10,7 +10,8 @@ import {
   ButtonCart,
   ButtonMenu,
   LogoMarca,
-  NavItem
+  NavItem,
+  Carrito
 } from "./NavbarStyles";
 import { BiSolidUserRectangle } from "react-icons/bi";
 import { FaShoppingCart } from "react-icons/fa";
@@ -28,7 +29,7 @@ const Navbar = () => {
           <ButtonMenu onClick={() => dispatch({ type: "toggle_menu" })}>
             <SlMenu />
           </ButtonMenu>
-          <NavListPrincipal className={state.isMenuOpen ? "open" : ""}>
+          <NavListPrincipal className={state.isMenuOpen ? "openMenu" : ""}>
              
              <NavItem to='/' > Home </NavItem>
              <NavItem to='products' >  Productos </NavItem>
@@ -44,9 +45,14 @@ const Navbar = () => {
           <LinkContainerInicioSesion href="#">
             <BiSolidUserRectangle />
           </LinkContainerInicioSesion>
-          <ButtonCart>
+          <ButtonCart onClick={() => dispatch({ type: "toggle_cart" })}>
             <FaShoppingCart />
           </ButtonCart>
+
+          <Carrito  className={state.isCartOpen ? "openCart" : ""}>
+            <p>No hay productos en el carrito</p>
+          </Carrito>
+
         </BtnNavbar>
       </NavbarContainerStyled>
     </HeaderContainerStyled>

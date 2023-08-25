@@ -33,7 +33,7 @@ export const NavListPrincipal = styled.ul`
   @media (max-width: 940px) {
     display: none;
 
-    &.open {
+    &.openMenu {
       display: flex;
       flex-direction: column;
       position: absolute;
@@ -50,8 +50,8 @@ export const NavListPrincipal = styled.ul`
 `;
 
 export const NavItem = styled(NavLink)`
-font-size: 1.3rem;
-`
+  font-size: 1.3rem;
+`;
 
 export const LogoMarca = styled.img`
   height: 4.3rem;
@@ -91,5 +91,20 @@ export const ButtonMenu = styled(ButtonCart)`
 
   @media (min-width: 941px) {
     display: none;
+  }
+`;
+
+export const Carrito = styled.div`
+  display: none;
+
+  &.openCart {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 16rem;
+    height: 14rem;
+    background-color: red;
+    top: 100%;
+    right: 0%;
   }
 `;

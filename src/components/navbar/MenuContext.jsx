@@ -5,6 +5,7 @@ const Context = createContext();
 const MenuDespegable = ({ children }) => {
   const initialState = {
     isMenuOpen: false,
+    isCartOpen: false,
   };
 
   const reducer = (state, action) => {
@@ -13,6 +14,13 @@ const MenuDespegable = ({ children }) => {
         return {
           ...state,
           isMenuOpen: !state.isMenuOpen,
+          isCartOpen: false,
+        };
+      case "toggle_cart":
+        return {
+          ...state,
+          isCartOpen: !state.isCartOpen,
+          isMenuOpen: false,
         };
       default:
         return state;
