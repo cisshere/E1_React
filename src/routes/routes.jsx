@@ -16,7 +16,7 @@ const Routes = () => {
       <Layout>
         <ReactDomRoutes>
           <Route path="/" element={<Home />} />
-          <Route path="products" element={<ProductosSecction />} />
+          <Route path="productos" element={<ProductosSecction />} />
           <Route path="beneficios" element={<Beneficios />} />
           <Route path="contacto" element={<Contacto />} />
 
