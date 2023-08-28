@@ -11,16 +11,17 @@ import {
   ButtonMenu,
   LogoMarca,
   NavItem,
-  Carrito
+  Carrito,
 } from "./NavbarStyles";
 import { BiSolidUserRectangle } from "react-icons/bi";
 import { FaShoppingCart } from "react-icons/fa";
 import { SlMenu } from "react-icons/sl";
 import { Context } from "./MenuContext";
+import { selectItemsCarrito } from '../../redux/carrito/carritoSelectors'
 
 const Navbar = () => {
-
   const { state, dispatch } = useContext(Context);
+  const itemsCarrito = selectItemsCarrito();
 
   return (
     <HeaderContainerStyled>
@@ -30,12 +31,10 @@ const Navbar = () => {
             <SlMenu />
           </ButtonMenu>
           <NavListPrincipal className={state.isMenuOpen ? "openMenu" : ""}>
-             
-             <NavItem to='/' > Home </NavItem>
-             <NavItem to='products' >  Productos </NavItem>
-             <NavItem to='beneficios' > Beneficios </NavItem>
-             <NavItem to='Contacto' > Contacto </NavItem>
-
+            <NavItem to="/"> Home </NavItem>
+            <NavItem to="products"> Productos </NavItem>
+            <NavItem to="beneficios"> Beneficios </NavItem>
+            <NavItem to="Contacto"> Contacto </NavItem>
           </NavListPrincipal>
         </MenuStyled>
 
@@ -49,10 +48,18 @@ const Navbar = () => {
             <FaShoppingCart />
           </ButtonCart>
 
-          <Carrito  className={state.isCartOpen ? "openCart" : ""}>
-            <p>No hay productos en el carrito</p>
-          </Carrito>
+          <Carrito className={state.isCartOpen ? "openCart" : ""}>
+            <ul>
+              {itemsCarrito.map((producto) => (
+                <li key={producto.id}>
+                  <p>{producto.nombre} </p>
+                  <p> {producto.precio}</p>
+                </li>
+              ))}
+            </ul>
 
+            {itemsCarrito.length === 0 && <p>No hay productos en el carrito</p>}
+          </Carrito>
         </BtnNavbar>
       </NavbarContainerStyled>
     </HeaderContainerStyled>

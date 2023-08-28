@@ -10,8 +10,13 @@ import {
   BtnComprar,
 } from "./ProductosStyles";
 import productList from "../../datos/DatoProductos";
+import { useDispatch } from "react-redux";
+import {agregarProducto} from "../../redux/carrito/carritoActions";
 
 const ProductosSecction = () => {
+
+  const dispatch = useDispatch();
+
   return (
     <ProductsSection>
       <TituloProductos>PRODUCTOS</TituloProductos>
@@ -28,7 +33,7 @@ const ProductosSecction = () => {
             <p style={{ fontWeight: "bold" }}>{producto.nombre}</p>
             <p>${producto.precio}</p>
             <p>{producto.metal}</p>
-            <BtnComprar>Comprar</BtnComprar>
+            <BtnComprar onClick={() => dispatch(agregarProducto(producto))}>Comprar</BtnComprar>
           </Card>
         ))}
       </ProductosContainer>
