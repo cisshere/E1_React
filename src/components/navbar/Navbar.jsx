@@ -12,17 +12,27 @@ import {
   LogoMarca,
   NavItem,
   Carrito,
+  ContenedorCarrito,
+  ProductoCarrito,
+  ProdImgCarrito,
+  DatosProductCarrito,
+  CambiarCantidad,
 } from "./NavbarStyles";
 import { BiSolidUserRectangle } from "react-icons/bi";
 import { FaShoppingCart } from "react-icons/fa";
 import { SlMenu } from "react-icons/sl";
 import { Context } from "./MenuContext";
-import { selectItemsCarrito } from '../../redux/carrito/carritoSelectors'
-import { PiShoppingCartThin } from 'react-icons/pi';
+import { selectItemsCarrito } from "../../redux/carrito/carritoSelectors";
+import { PiShoppingCartThin } from "react-icons/pi";
+import { GrFormSubtract, GrFormAdd } from "react-icons/gr";
+import { BsFillTrashFill } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+import { decrementar } from "../../redux/carrito/carritoActions";
 
 const Navbar = () => {
   const { state, dispatch } = useContext(Context);
   const itemsCarrito = selectItemsCarrito();
+  const dispatchD = useDispatch();
 
   return (
     <HeaderContainerStyled>
@@ -50,16 +60,32 @@ const Navbar = () => {
           </ButtonCart>
 
           <Carrito className={state.isCartOpen ? "openCart" : ""}>
-            <p> <PiShoppingCartThin/> Mi carrito  </p>
-            <ul>
+            <p>
+              <PiShoppingCartThin /> Mi carrito{" "}
+            </p>
+            <ContenedorCarrito>
               {itemsCarrito.map((producto) => (
-                <li key={producto.id}>
-                  <img src={producto.img}/>
-                  <p>{producto.nombre} </p>
-                  <p> {producto.precio}</p>
-                </li>
+                <ProductoCarrito key={producto.id}>
+                  <ProdImgCarrito src={producto.img} />
+                  <DatosProductCarrito>
+                    <p style={{ width: "11rem" }}>{producto.nombre} </p>
+                    <p> {producto.precio}</p>
+                    <CambiarCantidad>
+                      <button style={{ display: "flex", alignItems: "center" }}>
+                        <GrFormSubtract onClick={() => dispatchD(decrementar(producto))} />
+                      </button>
+                      <p>{producto.cantidad}</p>
+                      <button style={{ display: "flex", alignItems: "center" }}>
+                        <GrFormAdd />
+                      </button>
+                    </CambiarCantidad>
+                  </DatosProductCarrito>
+                  <div>
+                    <BsFillTrashFill />
+                  </div>
+                </ProductoCarrito>
               ))}
-            </ul>
+            </ContenedorCarrito>
 
             {itemsCarrito.length === 0 && <p>No hay productos en el carrito</p>}
           </Carrito>

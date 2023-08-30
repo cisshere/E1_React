@@ -1,3 +1,3 @@
 import { carritoSlice } from './carritoSlide';
 
-export const { agregarProducto, borrarCarrito } = carritoSlice.actions;
+export const { agregarProducto, decrementar, borrarCarrito } = carritoSlice.actions;

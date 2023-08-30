@@ -104,9 +104,43 @@ export const Carrito = styled.div`
     position: absolute;
     border: 1px solid;
     background-color: #c9bbd1;
-    width: 16rem;
-    height: 14rem;
-    top: 100%;
+    width: 21rem;
+    top: 4.9rem;
     right: 0%;
+    padding: 0.5rem 0 1rem 0.4rem;
+    gap: 1rem;
+    border: 0.06rem solid black;
   }
+`;
+
+export const ContenedorCarrito = styled.div`
+  gap: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  max-height: 20rem;
+`;
+
+export const ProductoCarrito = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+export const ProdImgCarrito = styled.img`
+  width: 4.5rem;
+  height: 4.5rem;
+  border: 3px solid black;
+`;
+
+export const DatosProductCarrito = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+`;
+
+export const CambiarCantidad = styled.div`
+  display: flex;
+  gap: 0.3rem;
 `;
