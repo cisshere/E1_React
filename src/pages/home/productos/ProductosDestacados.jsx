@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  ImagenCarousel,
-  DescripcionProducto,
-  ProductoContenedor,
-  DescripcionProductoNombre,
-  BtnComprarProducto,
-} from "./ProductosDestacadosStyles";
 import Slider from "react-slick";
 import productList from "../../../datos/DatoProductos";
+import CardProducto from "../../products/CardContainer";
 
 const ProductListSeccion = () => {
   const configuracion = {
@@ -53,15 +47,7 @@ const ProductListSeccion = () => {
       <h1 style={{ textAlign: "center" }}>Productos Destacados</h1>
       <Slider {...configuracion}>
         {productosDestacados.map((producto) => (
-          <ProductoContenedor key={producto.id}>
-            <ImagenCarousel src={producto.img} alt={producto.nombre} />
-            <DescripcionProductoNombre>
-              {producto.nombre}
-            </DescripcionProductoNombre>
-            <DescripcionProducto> $ {producto.precio} </DescripcionProducto>
-            <DescripcionProducto> {producto.metal} </DescripcionProducto>
-            <BtnComprarProducto>Comprar</BtnComprarProducto>
-          </ProductoContenedor>
+          <CardProducto {...producto} key={producto.id} />
         ))}
       </Slider>
     </section>

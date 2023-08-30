@@ -18,6 +18,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { SlMenu } from "react-icons/sl";
 import { Context } from "./MenuContext";
 import { selectItemsCarrito } from '../../redux/carrito/carritoSelectors'
+import { PiShoppingCartThin } from 'react-icons/pi';
 
 const Navbar = () => {
   const { state, dispatch } = useContext(Context);
@@ -49,9 +50,11 @@ const Navbar = () => {
           </ButtonCart>
 
           <Carrito className={state.isCartOpen ? "openCart" : ""}>
+            <p> <PiShoppingCartThin/> Mi carrito  </p>
             <ul>
               {itemsCarrito.map((producto) => (
                 <li key={producto.id}>
+                  <img src={producto.img}/>
                   <p>{producto.nombre} </p>
                   <p> {producto.precio}</p>
                 </li>

@@ -5,18 +5,11 @@ import {
   BtnLista,
   BtnCategoria,
   ProductosContainer,
-  Card,
-  ImgCart,
-  BtnComprar,
 } from "./ProductosStyles";
 import productList from "../../datos/DatoProductos";
-import { useDispatch } from "react-redux";
-import {agregarProducto} from "../../redux/carrito/carritoActions";
+import CardProducto from "./CardContainer";
 
 const ProductosSecction = () => {
-
-  const dispatch = useDispatch();
-
   return (
     <ProductsSection>
       <TituloProductos>PRODUCTOS</TituloProductos>
@@ -27,14 +20,8 @@ const ProductosSecction = () => {
         <BtnCategoria>Anillos</BtnCategoria>
       </BtnLista>
       <ProductosContainer>
-        {productList.map((producto, key) => (
-          <Card key={key}>
-            <ImgCart src={producto.img} alt={producto.alt} />
-            <p style={{ fontWeight: "bold" }}>{producto.nombre}</p>
-            <p>${producto.precio}</p>
-            <p>{producto.metal}</p>
-            <BtnComprar onClick={() => dispatch(agregarProducto(producto))}>Comprar</BtnComprar>
-          </Card>
+        {productList.map((producto) => (
+          <CardProducto {...producto} key={producto.id} />
         ))}
       </ProductosContainer>
     </ProductsSection>

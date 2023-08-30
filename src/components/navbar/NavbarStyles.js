@@ -100,10 +100,12 @@ export const Carrito = styled.div`
   &.openCart {
     display: flex;
     flex-direction: column;
+    text-align: center;
     position: absolute;
+    border: 1px solid;
+    background-color: #c9bbd1;
     width: 16rem;
     height: 14rem;
-    background-color: red;
     top: 100%;
     right: 0%;
   }

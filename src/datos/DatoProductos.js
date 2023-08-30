@@ -60,7 +60,7 @@ const productList = [
       destacado: true,
     },
     {
-      id: 8,
+      id: 7,
       img: "./assets/img/joyas/set-anillos.png",
       alt: "set-anillos",
       nombre: "Set de anillos",
