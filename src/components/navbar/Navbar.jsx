@@ -13,10 +13,6 @@ import {
   NavItem,
   Carrito,
   ContenedorCarrito,
-  ProductoCarrito,
-  ProdImgCarrito,
-  DatosProductCarrito,
-  CambiarCantidad,
 } from "./NavbarStyles";
 import { BiSolidUserRectangle } from "react-icons/bi";
 import { FaShoppingCart } from "react-icons/fa";
@@ -24,10 +20,9 @@ import { SlMenu } from "react-icons/sl";
 import { Context } from "./MenuContext";
 import { selectItemsCarrito } from "../../redux/carrito/carritoSelectors";
 import { PiShoppingCartThin } from "react-icons/pi";
-import { GrFormSubtract, GrFormAdd } from "react-icons/gr";
-import { BsFillTrashFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { decrementar, incrementar, borrarProducto, borrarCarrito } from "../../redux/carrito/carritoActions";
+import { borrarCarrito } from "../../redux/carrito/carritoActions";
+import CarritoContainer from "./CarritoContenedor";
 
 const Navbar = () => {
   const { state, dispatch } = useContext(Context);
@@ -60,44 +55,30 @@ const Navbar = () => {
           </ButtonCart>
 
           <Carrito className={state.isCartOpen ? "openCart" : ""}>
-            <p>
-              <PiShoppingCartThin /> Mi carrito{" "}
-            </p>
+            <p><PiShoppingCartThin/> Mi carrito</p>
             <ContenedorCarrito>
+
               {itemsCarrito.map((producto) => (
-                <ProductoCarrito key={producto.id}>
-                  <ProdImgCarrito src={producto.img} />
-                  <DatosProductCarrito>
-                    <p style={{ width: "11rem" }}>{producto.nombre} </p>
-                    <p> {producto.precio}</p>
-                    <CambiarCantidad>
-                      <button style={{ display: "flex", alignItems: "center" }}>
-                        <GrFormSubtract
-                          onClick={() => dispatchD(decrementar(producto))}
-                        />
-                      </button>
-                      <p>{producto.cantidad}</p>
-                      <button style={{ display: "flex", alignItems: "center" }}>
-                        <GrFormAdd
-                          onClick={() => dispatchD(incrementar(producto))}
-                        />
-                      </button>
-                    </CambiarCantidad>
-                  </DatosProductCarrito>
-                  <div>
-                    <button>
-                          <BsFillTrashFill onClick={() => dispatchD(borrarProducto(producto))}/>
-                    </button>
-                
-                  </div>
-                </ProductoCarrito>
+                <CarritoContainer {...producto} key={producto.id} />
               ))}
-            </ContenedorCarrito> 
-           {itemsCarrito.length !== 0 && <div style={{display: "flex", flexDirection: "column", gap: "2rem"}}> 
-              <p>Total $</p>
-              <button>Comprar</button>
-              <button onClick={() => dispatchD(borrarCarrito())}>Borrar todo</button>
-              </div>} 
+
+            </ContenedorCarrito>
+
+            {itemsCarrito.length !== 0 && (
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "2rem",
+                }}
+              >
+                <p>Total $</p>
+                <button>Comprar</button>
+                <button onClick={() => dispatchD(borrarCarrito())}>
+                  Borrar todo
+                </button>
+              </div>
+            )}
 
             {itemsCarrito.length === 0 && <p>No hay productos en el carrito</p>}
           </Carrito>
