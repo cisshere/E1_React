@@ -39,9 +39,9 @@ export const carritoSlice = createSlice({
       const productoAComprar = state.itemsCarrito.findIndex(
         (producto) => producto.id === action.payload.id
       );
-      if(productoAComprar){
-        state.productoAComprar.splice(0, 1);
-      }
+      
+      state.itemsCarrito.splice(productoAComprar, 1);
+
       
     },
     borrarCarrito: (state) => {
