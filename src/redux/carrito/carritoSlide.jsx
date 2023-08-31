@@ -13,21 +13,36 @@ export const carritoSlice = createSlice({
       const productoAComprar = state.itemsCarrito.find(
         (producto) => producto.id === action.payload.id
       );
-
       if (productoAComprar) {
         productoAComprar.cantidad += 1;
       } else {
         state.itemsCarrito.push({ ...action.payload, cantidad: 1 });
       }
     },
+    incrementar: (state, action) => {
+      const productoAComprar = state.itemsCarrito.find(
+        (producto) => producto.id === action.payload.id
+      );
+      if (productoAComprar.cantidad >= 1) {
+        productoAComprar.cantidad += 1;
+      }
+    },
     decrementar: (state, action) => {
       const productoAComprar = state.itemsCarrito.find(
         (producto) => producto.id === action.payload.id
       );
-
-      if (productoAComprar.cantidad > 0) {
+      if (productoAComprar.cantidad > 1) {
         productoAComprar.cantidad -= 1;
       }
+    },
+    borrarProducto : (state,action) =>{
+      const productoAComprar = state.itemsCarrito.findIndex(
+        (producto) => producto.id === action.payload.id
+      );
+      if(productoAComprar){
+        state.productoAComprar.splice(0, 1);
+      }
+      
     },
     borrarCarrito: (state) => {
       state = initialState;

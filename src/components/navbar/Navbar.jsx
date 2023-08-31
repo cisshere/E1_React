@@ -27,7 +27,7 @@ import { PiShoppingCartThin } from "react-icons/pi";
 import { GrFormSubtract, GrFormAdd } from "react-icons/gr";
 import { BsFillTrashFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { decrementar } from "../../redux/carrito/carritoActions";
+import { decrementar, incrementar, borrarProducto } from "../../redux/carrito/carritoActions";
 
 const Navbar = () => {
   const { state, dispatch } = useContext(Context);
@@ -72,20 +72,32 @@ const Navbar = () => {
                     <p> {producto.precio}</p>
                     <CambiarCantidad>
                       <button style={{ display: "flex", alignItems: "center" }}>
-                        <GrFormSubtract onClick={() => dispatchD(decrementar(producto))} />
+                        <GrFormSubtract
+                          onClick={() => dispatchD(decrementar(producto))}
+                        />
                       </button>
                       <p>{producto.cantidad}</p>
                       <button style={{ display: "flex", alignItems: "center" }}>
-                        <GrFormAdd />
+                        <GrFormAdd
+                          onClick={() => dispatchD(incrementar(producto))}
+                        />
                       </button>
                     </CambiarCantidad>
                   </DatosProductCarrito>
                   <div>
-                    <BsFillTrashFill />
+                    <button>
+                          <BsFillTrashFill onClick={() => dispatchD(borrarProducto(producto))}/>
+                    </button>
+                
                   </div>
                 </ProductoCarrito>
               ))}
-            </ContenedorCarrito>
+            </ContenedorCarrito> 
+            <div style={{display: "flex", flexDirection: "column", gap: "2rem"}}> 
+              <p>Total $</p>
+              <button>Comprar</button>
+              <button>Borrar todo</button>
+              </div>
 
             {itemsCarrito.length === 0 && <p>No hay productos en el carrito</p>}
           </Carrito>
