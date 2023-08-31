@@ -27,7 +27,7 @@ import { PiShoppingCartThin } from "react-icons/pi";
 import { GrFormSubtract, GrFormAdd } from "react-icons/gr";
 import { BsFillTrashFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { decrementar, incrementar, borrarProducto } from "../../redux/carrito/carritoActions";
+import { decrementar, incrementar, borrarProducto, borrarCarrito } from "../../redux/carrito/carritoActions";
 
 const Navbar = () => {
   const { state, dispatch } = useContext(Context);
@@ -93,11 +93,11 @@ const Navbar = () => {
                 </ProductoCarrito>
               ))}
             </ContenedorCarrito> 
-            <div style={{display: "flex", flexDirection: "column", gap: "2rem"}}> 
+           {itemsCarrito.length !== 0 && <div style={{display: "flex", flexDirection: "column", gap: "2rem"}}> 
               <p>Total $</p>
               <button>Comprar</button>
-              <button>Borrar todo</button>
-              </div>
+              <button onClick={() => dispatchD(borrarCarrito())}>Borrar todo</button>
+              </div>} 
 
             {itemsCarrito.length === 0 && <p>No hay productos en el carrito</p>}
           </Carrito>

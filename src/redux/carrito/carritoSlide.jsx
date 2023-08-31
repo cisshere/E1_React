@@ -41,11 +41,9 @@ export const carritoSlice = createSlice({
       );
       
       state.itemsCarrito.splice(productoAComprar, 1);
-
-      
     },
     borrarCarrito: (state) => {
-      state = initialState;
+      state.itemsCarrito = [];
     },
   },
 });
