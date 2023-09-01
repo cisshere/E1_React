@@ -14,7 +14,7 @@ import {
   Carrito,
   ContenedorCarrito,
 } from "./NavbarStyles";
-import {ButtonCart, BelowCarrito} from "./CarritoStyles";
+import { ButtonCart, BelowCarrito } from "./CarritoStyles";
 import { BiSolidUserRectangle } from "react-icons/bi";
 import { FaShoppingCart } from "react-icons/fa";
 import { SlMenu } from "react-icons/sl";
@@ -24,11 +24,13 @@ import { BsCart4 } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { borrarCarrito } from "../../redux/carrito/carritoActions";
 import CarritoContainer from "./CarritoContenedor";
+/* import EjemploModalReact from "./modal/ModalReact"; */
 
 const Navbar = () => {
   const { state, dispatch } = useContext(Context);
   const itemsCarrito = selectItemsCarrito();
   const dispatchRedux = useDispatch();
+
 
   return (
     <HeaderContainerStyled>
@@ -56,6 +58,9 @@ const Navbar = () => {
           </ButtonCartLogo>
 
           <Carrito className={state.isCartOpen ? "openCart" : ""}>
+            
+          <button onClick={openModal}>Open Modal</button>
+          
             <p>
               <BsCart4 /> Mi carrito
             </p>
@@ -72,7 +77,7 @@ const Navbar = () => {
                 <ButtonCart onClick={() => dispatchRedux(borrarCarrito())}>
                   Borrar todo
                 </ButtonCart>
-                </BelowCarrito>
+              </BelowCarrito>
             )}
 
             {itemsCarrito.length === 0 && <p>No hay productos en el carrito</p>}
