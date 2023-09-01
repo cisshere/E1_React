@@ -1,38 +1,38 @@
 import { GrFormSubtract, GrFormAdd } from "react-icons/gr";
-import { BsFillTrashFill } from "react-icons/bs";
+import { FaRegTrashAlt } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import {
   decrementar,
   incrementar,
   borrarProducto,
 } from "../../redux/carrito/carritoActions";
-import { CambiarCantidad, DatosProductCarrito, ProdImgCarrito, ProductoCarrito } from "./NavbarStyles";
+import { CambiarCantidad, DatosProductCarrito, ProdImgCarrito, ProductoCarrito, ButtonCambiarCantidad } from "./CarritoStyles";
 
  const CarritoContainer = (producto) => {
 
-  const dispatchD = useDispatch();
+  const dispatchRedux = useDispatch();
   const { img, nombre, precio } = producto;
 
   return (
     <ProductoCarrito>
       <ProdImgCarrito src={img} />
       <DatosProductCarrito>
-        <p style={{ width: "11rem" }}>{nombre} </p>
+        <p style={{ fontWeight: "bold" }}>{nombre} </p>
         <p> {precio}</p>
         <CambiarCantidad>
-          <button style={{ display: "flex", alignItems: "center" }}>
-            <GrFormSubtract onClick={() => dispatchD(decrementar(producto))} />
-          </button>
+          <ButtonCambiarCantidad>
+            <GrFormSubtract onClick={() => dispatchRedux(decrementar(producto))} />
+          </ButtonCambiarCantidad>
           <p>{producto.cantidad}</p>
-          <button style={{ display: "flex", alignItems: "center" }}>
-            <GrFormAdd onClick={() => dispatchD(incrementar(producto))} />
-          </button>
+          <ButtonCambiarCantidad>
+            <GrFormAdd onClick={() => dispatchRedux(incrementar(producto))} />
+          </ButtonCambiarCantidad>
         </CambiarCantidad>
       </DatosProductCarrito>
       <div>
         <button>
-          <BsFillTrashFill
-            onClick={() => dispatchD(borrarProducto(producto))}
+          <FaRegTrashAlt
+            onClick={() => dispatchRedux(borrarProducto(producto))}
           />
         </button>
       </div>

@@ -7,19 +7,20 @@ import {
   NavListPrincipal,
   BtnNavbar,
   LinkContainerInicioSesion,
-  ButtonCart,
+  ButtonCartLogo,
   ButtonMenu,
   LogoMarca,
   NavItem,
   Carrito,
   ContenedorCarrito,
 } from "./NavbarStyles";
+import {ButtonCart, BelowCarrito} from "./CarritoStyles";
 import { BiSolidUserRectangle } from "react-icons/bi";
 import { FaShoppingCart } from "react-icons/fa";
 import { SlMenu } from "react-icons/sl";
 import { Context } from "./MenuContext";
 import { selectItemsCarrito } from "../../redux/carrito/carritoSelectors";
-import { PiShoppingCartThin } from "react-icons/pi";
+import { BsCart4 } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { borrarCarrito } from "../../redux/carrito/carritoActions";
 import CarritoContainer from "./CarritoContenedor";
@@ -27,7 +28,7 @@ import CarritoContainer from "./CarritoContenedor";
 const Navbar = () => {
   const { state, dispatch } = useContext(Context);
   const itemsCarrito = selectItemsCarrito();
-  const dispatchD = useDispatch();
+  const dispatchRedux = useDispatch();
 
   return (
     <HeaderContainerStyled>
@@ -50,34 +51,28 @@ const Navbar = () => {
           <LinkContainerInicioSesion href="#">
             <BiSolidUserRectangle />
           </LinkContainerInicioSesion>
-          <ButtonCart onClick={() => dispatch({ type: "toggle_cart" })}>
+          <ButtonCartLogo onClick={() => dispatch({ type: "toggle_cart" })}>
             <FaShoppingCart />
-          </ButtonCart>
+          </ButtonCartLogo>
 
           <Carrito className={state.isCartOpen ? "openCart" : ""}>
-            <p><PiShoppingCartThin/> Mi carrito</p>
+            <p>
+              <BsCart4 /> Mi carrito
+            </p>
             <ContenedorCarrito>
-
               {itemsCarrito.map((producto) => (
                 <CarritoContainer {...producto} key={producto.id} />
               ))}
-
             </ContenedorCarrito>
 
             {itemsCarrito.length !== 0 && (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "2rem",
-                }}
-              >
-                <p>Total $</p>
-                <button>Comprar</button>
-                <button onClick={() => dispatchD(borrarCarrito())}>
+              <BelowCarrito>
+                <p style={{ border: "1px solid", margin: "0 4rem" }}>Total $</p>
+                <ButtonCart>Comprar</ButtonCart>
+                <ButtonCart onClick={() => dispatchRedux(borrarCarrito())}>
                   Borrar todo
-                </button>
-              </div>
+                </ButtonCart>
+                </BelowCarrito>
             )}
 
             {itemsCarrito.length === 0 && <p>No hay productos en el carrito</p>}

@@ -78,7 +78,7 @@ export const LinkContainerInicioSesion = styled.a`
   font-size: 2.2rem;
 `;
 
-export const ButtonCart = styled.button`
+export const ButtonCartLogo = styled.button`
   display: flex;
   font-size: 1.7rem;
   background-color: #b78dcd1c;
@@ -86,7 +86,7 @@ export const ButtonCart = styled.button`
   cursor: pointer;
 `;
 
-export const ButtonMenu = styled(ButtonCart)`
+export const ButtonMenu = styled(ButtonCartLogo)`
   border-radius: 0;
 
   @media (min-width: 941px) {
@@ -121,26 +121,3 @@ export const ContenedorCarrito = styled.div`
   max-height: 20rem;
 `;
 
-export const ProductoCarrito = styled.div`
-  display: flex;
-  gap: 1rem;
-`;
-
-export const ProdImgCarrito = styled.img`
-  width: 4.5rem;
-  height: 4.5rem;
-  border: 3px solid black;
-`;
-
-export const DatosProductCarrito = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-`;
-
-export const CambiarCantidad = styled.div`
-  display: flex;
-  gap: 0.3rem;
-`;
