@@ -24,18 +24,8 @@ import { BsCart4 } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { borrarCarrito } from "../../redux/carrito/carritoActions";
 import CarritoContainer from "./CarritoContenedor";
-import Modal from "react-modal"; 
-
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
+import Modal from "react-modal";
+import { EjemploModalReact } from "./modal/ModalReact";
 
 const Navbar = () => {
   const { state, dispatch } = useContext(Context);
@@ -44,14 +34,13 @@ const Navbar = () => {
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
-  function openModal() {
+  const openModal = () => {
     setIsOpen(true);
-  }
+  };
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false);
-  }
-
+  };
 
   return (
     <HeaderContainerStyled>
@@ -79,22 +68,11 @@ const Navbar = () => {
           </ButtonCartLogo>
 
           <Carrito className={state.isCartOpen ? "openCart" : ""}>
-            
-          <div>
+            <div>
+              <button onClick={openModal}>Open Modal</button>
 
-          <button onClick={openModal}>Open Modal</button>
-
-      <Modal 
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-         style={customStyles} 
-        contentLabel="Example Modal"
-      >
-        <h2>¿Desea borrar el carrito?</h2>
-        <button onClick={closeModal}>Cerrar</button>
-        
-      </Modal>
-    </div>
+              <EjemploModalReact modalIsOpen={modalIsOpen} closeModal={setIsOpen}/>
+            </div>
 
             <p>
               <BsCart4 /> Mi carrito
