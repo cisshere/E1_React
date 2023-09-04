@@ -8,15 +8,16 @@ import {
 } from "./ProductosStyles";
 import productList from "../../datos/DatoProductos";
 import CardProducto from "./CardContainer";
+import { useState } from "react";
 
 const ProductosSecction = () => {
-  const [categories, SetCategories] = useState("Todos");
+  const [Categories, setCategories] = useState("Todos");
 
-  const categoriaFiltrada = productList.filter((producto) => {
-    if (categories == "Todos") {
+  const productosFiltrados = productList.filter((producto) => {
+    if (Categories === "Todos") {
       return true;
     } else {
-      return producto.categoria === categories;
+      return producto.categoria === Categories;
     }
   });
 
@@ -24,15 +25,19 @@ const ProductosSecction = () => {
     <ProductsSection>
       <TituloProductos>PRODUCTOS</TituloProductos>
       <BtnLista>
-        <BtnCategoria onClick={SetCategories("Todos")}>Todos</BtnCategoria>
-        <BtnCategoria onClick={SetCategories("Aros")}>Aros</BtnCategoria>
-        <BtnCategoria onClick={SetCategories("Collares")}>
+        <BtnCategoria onClick={() => setCategories("Todos")}>
+          Todos
+        </BtnCategoria>
+        <BtnCategoria onClick={() => setCategories("aros")}>Aros</BtnCategoria>
+        <BtnCategoria onClick={() => setCategories("collar")}>
           Collares
         </BtnCategoria>
-        <BtnCategoria onClick={SetCategories("Anillos")}>Anillos</BtnCategoria>
+        <BtnCategoria onClick={() => setCategories("anillo")}>
+          Anillos
+        </BtnCategoria>
       </BtnLista>
       <ProductosContainer>
-        {categoriaFiltrada.map((producto) => (
+        {productosFiltrados.map((producto) => (
           <CardProducto {...producto} key={producto.id} />
         ))}
       </ProductosContainer>
