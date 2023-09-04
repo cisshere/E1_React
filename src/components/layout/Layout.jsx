@@ -4,7 +4,6 @@ import { MenuDespegable } from "../navbar/MenuContext";
 import FooterSeccion from "../footer/Footer";
 
 const ContainerStyle = styled.div`
-  padding-top: 6rem;
 `;
 
 function Layout({ children }) {

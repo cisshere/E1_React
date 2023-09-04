@@ -4,6 +4,7 @@ export const BeneficiosSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 6rem;
 `;
 
 export const BeneficiosContenedor = styled.div`

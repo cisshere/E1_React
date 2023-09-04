@@ -6,6 +6,7 @@ export const ProductsSection = styled.section`
   align-items: center;
   margin-bottom: 2rem;
   gap: 2rem;
+  padding-top: 6rem;
 `;
 
 export const TituloProductos = styled.h2`

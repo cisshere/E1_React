@@ -5,6 +5,11 @@ export const HeroSection = styled.section`
   align-items: center;
   justify-content: center;
   gap: 4rem;
+  padding-top: 6rem;
+
+  @media(max-width: 420px){
+    padding-top: 4.5rem;
+  }
 
   @media (max-width: 800px) {
     flex-direction: column;
@@ -26,6 +31,7 @@ export const ContenedorHero = styled.div`
 
   @media(max-width:420px){
     padding: 2rem 0;
+    border-radius: 0;
   }
 
   @media(max-width:710px){
