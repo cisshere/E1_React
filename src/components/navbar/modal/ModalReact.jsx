@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-modal";
 
+/*
 const customStyles = {
   content: {
     top: "50%",
@@ -13,9 +14,9 @@ const customStyles = {
   },
 };
 
-/* Modal.setAppElement('#yourAppElement'); */
+/* Modal.setAppElement('#yourAppElement'); 
 
-export function EjemploModalReact() {
+export function EjemploModalReact(openModal) {
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -52,4 +53,4 @@ export function EjemploModalReact() {
 
 export default EjemploModalReact;
 
-/* ReactDOM.render(<EjemploModalReact />, appElement); */
+ ReactDOM.render(<EjemploModalReact />, appElement); */

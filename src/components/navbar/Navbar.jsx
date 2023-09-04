@@ -24,12 +24,33 @@ import { BsCart4 } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { borrarCarrito } from "../../redux/carrito/carritoActions";
 import CarritoContainer from "./CarritoContenedor";
-/* import EjemploModalReact from "./modal/ModalReact"; */
+import Modal from "react-modal"; 
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
 
 const Navbar = () => {
   const { state, dispatch } = useContext(Context);
   const itemsCarrito = selectItemsCarrito();
   const dispatchRedux = useDispatch();
+
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
 
   return (
@@ -59,8 +80,22 @@ const Navbar = () => {
 
           <Carrito className={state.isCartOpen ? "openCart" : ""}>
             
+          <div>
+
           <button onClick={openModal}>Open Modal</button>
-          
+
+      <Modal 
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+         style={customStyles} 
+        contentLabel="Example Modal"
+      >
+        <h2>¿Desea borrar el carrito?</h2>
+        <button onClick={closeModal}>Cerrar</button>
+        
+      </Modal>
+    </div>
+
             <p>
               <BsCart4 /> Mi carrito
             </p>

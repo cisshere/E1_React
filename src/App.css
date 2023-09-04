@@ -18,3 +18,11 @@
         margin: 0 15%;
     }
 }
+
+
+.ReactModal__Overlay{
+    position: fixed;
+    inset: 0px;
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: 5;
+}
