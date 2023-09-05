@@ -110,6 +110,10 @@ export const Carrito = styled.div`
     padding: 0.5rem 0 1rem 0.4rem;
     gap: 1rem;
     border: 0.06rem solid black;
+
+    @media (min-width: 1368px) {
+      right: auto;
+    }
   }
 `;
 
@@ -120,4 +124,3 @@ export const ContenedorCarrito = styled.div`
   overflow-x: hidden;
   max-height: 20rem;
 `;
-

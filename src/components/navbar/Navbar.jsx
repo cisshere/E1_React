@@ -24,7 +24,6 @@ import { BsCart4 } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { borrarCarrito } from "../../redux/carrito/carritoActions";
 import CarritoContainer from "./CarritoContenedor";
-import Modal from "react-modal";
 import { EjemploModalReact } from "./modal/ModalReact";
 
 const Navbar = () => {
@@ -71,11 +70,14 @@ const Navbar = () => {
             <div>
               <button onClick={openModal}>Open Modal</button>
 
-              <EjemploModalReact modalIsOpen={modalIsOpen} closeModal={setIsOpen}/>
+              <EjemploModalReact
+                modalIsOpen={modalIsOpen}
+                closeModal={closeModal}
+              />
             </div>
-
             <p>
-              <BsCart4 /> Mi carrito
+              <BsCart4 />
+              Mi carrito
             </p>
             <ContenedorCarrito>
               {itemsCarrito.map((producto) => (
@@ -87,7 +89,7 @@ const Navbar = () => {
               <BelowCarrito>
                 <p style={{ border: "1px solid", margin: "0 4rem" }}>Total $</p>
                 <ButtonCart>Comprar</ButtonCart>
-                <ButtonCart onClick={() => dispatchRedux(borrarCarrito())}>
+                <ButtonCart onClick={openModal}>
                   Borrar todo
                 </ButtonCart>
               </BelowCarrito>
