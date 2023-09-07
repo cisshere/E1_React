@@ -104,7 +104,7 @@ export const Carrito = styled.div`
     position: absolute;
     border: 1px solid;
     background-color: #c9bbd1;
-    width: 21rem;
+    width: 18rem;
     top: 4.9rem;
     right: 0%;
     padding: 0.5rem 0 1rem 0.4rem;
