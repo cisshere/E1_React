@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useContext } from "react";
 import {
   HeaderContainerStyled,
@@ -32,6 +32,17 @@ const Navbar = () => {
   const dispatchRedux = useDispatch();
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [carritoComprado, setCarritoComprado] = useState(false);
+
+  const comprarCarrito = () =>{
+    setCarritoComprado(true);
+    openModal();
+  }
+
+  const borrarTodoCarrito = () =>{
+    setCarritoComprado(false);
+    openModal();
+  }
 
   const openModal = () => {
     setIsOpen(true);
@@ -41,60 +52,65 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
+
+
   return (
-    <HeaderContainerStyled>
-      <NavbarContainerStyled>
-        <MenuStyled>
-          <ButtonMenu onClick={() => dispatch({ type: "toggle_menu" })}>
-            <SlMenu />
-          </ButtonMenu>
-          <NavListPrincipal className={state.isMenuOpen ? "openMenu" : ""}>
-            <NavItem to="/"> Home </NavItem>
-            <NavItem to="productos"> Productos </NavItem>
-            <NavItem to="beneficios"> Beneficios </NavItem>
-            <NavItem to="contacto"> Contacto </NavItem>
-          </NavListPrincipal>
-        </MenuStyled>
+    <>
+      <HeaderContainerStyled>
+        <NavbarContainerStyled>
+          <MenuStyled>
+            <ButtonMenu onClick={() => dispatch({ type: "toggle_menu" })}>
+              <SlMenu />
+            </ButtonMenu>
+            <NavListPrincipal className={state.isMenuOpen ? "openMenu" : ""}>
+              <NavItem to="/"> Home </NavItem>
+              <NavItem to="productos"> Productos </NavItem>
+              <NavItem to="beneficios"> Beneficios </NavItem>
+              <NavItem to="contacto"> Contacto </NavItem>
+            </NavListPrincipal>
+          </MenuStyled>
 
-        <LogoMarca src="./assets/img/logo.png" alt="logo" />
+          <LogoMarca src="./assets/img/logo.png" alt="logo" />
 
-        <BtnNavbar>
-          <LinkContainerInicioSesion href="#">
-            <BiSolidUserRectangle />
-          </LinkContainerInicioSesion>
-          <ButtonCartLogo onClick={() => dispatch({ type: "toggle_cart" })}>
-            <FaShoppingCart />
-          </ButtonCartLogo>
+          <BtnNavbar>
+            <LinkContainerInicioSesion href="#">
+              <BiSolidUserRectangle />
+            </LinkContainerInicioSesion>
+            <ButtonCartLogo onClick={() => dispatch({ type: "toggle_cart" })}>
+              <FaShoppingCart />
+            </ButtonCartLogo>
 
-          <Carrito className={state.isCartOpen ? "openCart" : ""}>
-            <p>
-            <EjemploModalReact
-                modalIsOpen={modalIsOpen}
-                closeModal={closeModal}
-              />
-              
-              <BsCart4 />
-              Mi carrito
-            </p>
-            <ContenedorCarrito>
-              {itemsCarrito.map((producto) => (
-                <CarritoContainer {...producto} key={producto.id} />
-              ))}
-            </ContenedorCarrito>
+            <Carrito className={state.isCartOpen ? "openCart" : ""}>
+              <p>
+                <BsCart4 />
+                Mi carrito
+              </p>
+              <ContenedorCarrito>
+                {itemsCarrito.map((producto) => (
+                  <CarritoContainer {...producto} key={producto.id} />
+                ))}
+              </ContenedorCarrito>
 
-            {itemsCarrito.length !== 0 && (
-              <BelowCarrito>
-                <p style={{ border: "1px solid", margin: "0 4rem" }}>Total $</p>
-                <ButtonCart>Comprar</ButtonCart>
-                <ButtonCart onClick={openModal}>Borrar todo</ButtonCart>
-              </BelowCarrito>
-            )}
+              {itemsCarrito.length !== 0 && (
+                <BelowCarrito>
+                  <p style={{ border: "1px solid", margin: "0 4rem" }}>
+                    Total $
+                  </p>
+                  <ButtonCart onClick={comprarCarrito} >Comprar</ButtonCart>
+                  <ButtonCart onClick={borrarTodoCarrito}>Borrar todo</ButtonCart>
+                </BelowCarrito>
+              )}
 
-            {itemsCarrito.length === 0 && <p>No hay productos en el carrito</p>}
-          </Carrito>
-        </BtnNavbar>
-      </NavbarContainerStyled>
-    </HeaderContainerStyled>
+              {itemsCarrito.length === 0 && (
+                <p>No hay productos en el carrito</p>
+              )}
+            </Carrito>
+          </BtnNavbar>
+        </NavbarContainerStyled>
+      </HeaderContainerStyled>
+
+      <EjemploModalReact modalIsOpen={modalIsOpen} closeModal={closeModal} aceptarClick={setCarritoComprado ?  ""} />
+    </>
   );
 };
 

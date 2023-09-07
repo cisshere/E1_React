@@ -2,9 +2,6 @@ import React from "react";
 import Modal from "react-modal";
 import { SlClose } from "react-icons/sl";
 import styled from "styled-components";
-import { useDispatch } from "react-redux";
-import { borrarCarrito } from "../../../redux/carrito/carritoActions";
-
 
 const ButtonModal = styled.button`
   font-weight: bold;
@@ -31,9 +28,7 @@ const customStyles = {
   },
 };
 
-export const EjemploModalReact = ({ modalIsOpen, closeModal }) => {
-
-  const dispatchRedux = useDispatch();
+export const EjemploModalReact = ({ modalIsOpen, closeModal, mensaje, aceptarClick }) => {
 
   return (
     <Modal
@@ -43,9 +38,9 @@ export const EjemploModalReact = ({ modalIsOpen, closeModal }) => {
       contentLabel="Example Modal"
     >
       <SlClose onClick={closeModal} size={28} style={{ cursor: "pointer" }} />
-      <h2>¿Desea borrar todo el carrito?</h2>
+      <h2>{mensaje}</h2>
       <div style={{ display: "flex", gap: "2rem" }}>
-        <ButtonModal onClick={() => { dispatchRedux(borrarCarrito()); closeModal(); }}>Aceptar</ButtonModal>
+        <ButtonModal onClick={() => { aceptarClick(); closeModal(); }}>Aceptar</ButtonModal>
         <ButtonModal onClick={closeModal}>Cancelar</ButtonModal>
       </div>
     </Modal>
