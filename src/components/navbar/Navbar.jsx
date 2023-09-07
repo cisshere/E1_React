@@ -42,6 +42,7 @@ const Navbar = () => {
   const borrarTodoCarrito = () =>{
     setCarritoComprado(false);
     openModal();
+    
   }
 
   const openModal = () => {
@@ -109,7 +110,7 @@ const Navbar = () => {
         </NavbarContainerStyled>
       </HeaderContainerStyled>
 
-      <EjemploModalReact modalIsOpen={modalIsOpen} closeModal={closeModal} aceptarClick={setCarritoComprado ?  ""} />
+      <EjemploModalReact modalIsOpen={modalIsOpen} closeModal={closeModal} aceptarClick={carritoComprado ? comprarCarrito : borrarTodoCarrito} mensaje={carritoComprado ? "¿Desea realizar la compra?" : "¿Desea borrar todo el carrito?"} />
     </>
   );
 };
