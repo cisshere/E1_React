@@ -1,19 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import { SlClose } from "react-icons/sl";
-import styled from "styled-components";
-
-const ButtonModal = styled.button`
-  font-weight: bold;
-  background-color: #ffffff;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 2rem;
-
-  &:hover {
-    background-color: #dddddd;
-  }
-`;
+import {ButtonModal } from "./ModalStyled";
 
 const customStyles = {
   content: {
@@ -28,7 +16,7 @@ const customStyles = {
   },
 };
 
-export const EjemploModalReact = ({ modalIsOpen, closeModal, mensaje, aceptarClick }) => {
+export const ModalCarrito = ({ modalIsOpen, closeModal, mensaje, aceptarClick }) => {
 
   return (
     <Modal
@@ -47,4 +35,4 @@ export const EjemploModalReact = ({ modalIsOpen, closeModal, mensaje, aceptarCli
   );
 };
 
-export default EjemploModalReact;
+export default ModalCarrito;

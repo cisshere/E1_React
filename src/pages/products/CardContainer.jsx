@@ -9,8 +9,8 @@ import {
   DescripcionProductoNombre,
 } from "../products/ProductosStyles";
 import Modal from "react-modal";
-import styled from "styled-components";
 import { SlClose } from "react-icons/sl";
+import { ButtonModal } from "../../components/navbar/modal/ModalStyled";
 
 
 const customStyles = {
@@ -42,6 +42,16 @@ const CardProducto = (producto) => {
 
   return (
     <>
+    <ProductoContenedor>
+      <ImagenProducto src={img} alt={alt} />
+      <DescripcionProductoNombre>{nombre}</DescripcionProductoNombre>
+      <DescripcionProducto> $ {precio} </DescripcionProducto>
+      <DescripcionProducto> {metal} </DescripcionProducto>
+      <BtnComprarProducto onClick={openModal}>
+        Comprar
+      </BtnComprarProducto>
+    </ProductoContenedor>
+
     <Modal
       isOpen={modalIsOpen}
       onRequestClose={closeModal}
@@ -51,21 +61,10 @@ const CardProducto = (producto) => {
       <SlClose onClick={closeModal} size={28} style={{ cursor: "pointer" }} />
       <h2>¿Desea agregar el producto al carrito?</h2>
       <div style={{ display: "flex", gap: "2rem" }}>
-        <button onClick={openModal}>Aceptar</button>
-        <button onClick={closeModal}>Cancelar</button>
+        <ButtonModal onClick={() => {dispatch(agregarProducto(producto)); closeModal(); } }>Aceptar</ButtonModal>
+        <ButtonModal onClick={closeModal}>Cancelar</ButtonModal>
       </div>
     </Modal>
-
-
-    <ProductoContenedor>
-      <ImagenProducto src={img} alt={alt} />
-      <DescripcionProductoNombre>{nombre}</DescripcionProductoNombre>
-      <DescripcionProducto> $ {precio} </DescripcionProducto>
-      <DescripcionProducto> {metal} </DescripcionProducto>
-      <BtnComprarProducto onClick={() => dispatch(agregarProducto(producto))}>
-        Comprar
-      </BtnComprarProducto>
-    </ProductoContenedor>
     </>
   );
 };

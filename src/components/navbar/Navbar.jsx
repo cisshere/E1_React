@@ -24,7 +24,7 @@ import { BsCart4 } from "react-icons/bs";
 import { useDispatch } from "react-redux";
 import { borrarCarrito } from "../../redux/carrito/carritoActions";
 import CarritoContainer from "./CarritoContenedor";
-import { EjemploModalReact } from "./modal/ModalReact";
+import { ModalCarrito } from "./modal/ModalReact";
 
 const Navbar = () => {
   const { state, dispatch } = useContext(Context);
@@ -110,7 +110,7 @@ const Navbar = () => {
         </NavbarContainerStyled>
       </HeaderContainerStyled>
 
-      <EjemploModalReact modalIsOpen={modalIsOpen} closeModal={closeModal} aceptarClick={carritoComprado ? comprarCarrito : borrarTodoCarrito} mensaje={carritoComprado ? "¿Desea realizar la compra?" : "¿Desea borrar todo el carrito?"} />
+      <ModalCarrito modalIsOpen={modalIsOpen} closeModal={closeModal} aceptarClick={carritoComprado ? () =>{dispatchRedux(borrarCarrito())} : () =>{dispatchRedux(borrarCarrito())} } mensaje={carritoComprado ? "¿Desea realizar la compra?" : "¿Desea borrar todo el carrito?"} />
     </>
   );
 };
