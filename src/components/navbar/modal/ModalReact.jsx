@@ -45,7 +45,7 @@ export const EjemploModalReact = ({ modalIsOpen, closeModal }) => {
       <SlClose onClick={closeModal} size={28} style={{ cursor: "pointer" }} />
       <h2>¿Desea borrar todo el carrito?</h2>
       <div style={{ display: "flex", gap: "2rem" }}>
-        <ButtonModal onClick={() => dispatchRedux(borrarCarrito())} >Aceptar</ButtonModal>
+        <ButtonModal onClick={() => { dispatchRedux(borrarCarrito()); closeModal(); }}>Aceptar</ButtonModal>
         <ButtonModal onClick={closeModal}>Cancelar</ButtonModal>
       </div>
     </Modal>

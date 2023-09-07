@@ -67,15 +67,12 @@ const Navbar = () => {
           </ButtonCartLogo>
 
           <Carrito className={state.isCartOpen ? "openCart" : ""}>
-            <div>
-              <button onClick={openModal}>Open Modal</button>
-
-              <EjemploModalReact
+            <p>
+            <EjemploModalReact
                 modalIsOpen={modalIsOpen}
                 closeModal={closeModal}
               />
-            </div>
-            <p>
+              
               <BsCart4 />
               Mi carrito
             </p>
@@ -89,9 +86,7 @@ const Navbar = () => {
               <BelowCarrito>
                 <p style={{ border: "1px solid", margin: "0 4rem" }}>Total $</p>
                 <ButtonCart>Comprar</ButtonCart>
-                <ButtonCart onClick={openModal}>
-                  Borrar todo
-                </ButtonCart>
+                <ButtonCart onClick={openModal}>Borrar todo</ButtonCart>
               </BelowCarrito>
             )}
 
