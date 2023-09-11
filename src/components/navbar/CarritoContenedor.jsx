@@ -11,14 +11,15 @@ import { CambiarCantidad, DatosProductCarrito, ProdImgCarrito, ProductoCarrito, 
  const CarritoContainer = (producto) => {
 
   const dispatchRedux = useDispatch();
-  const { img, nombre, precio } = producto;
+  const { img, nombre, precio, cantidad } = producto;
 
   return (
     <ProductoCarrito>
       <ProdImgCarrito src={img} />
       <DatosProductCarrito>
         <p style={{ fontWeight: "bold" }}>{nombre} </p>
-        <p> {precio}</p>
+        <p> ${precio.toLocaleString("es")}</p>
+        <p> subtotal = ${(precio * cantidad).toLocaleString("es")}</p>
         <CambiarCantidad>
           <ButtonCambiarCantidad>
             <GrFormSubtract onClick={() => dispatchRedux(decrementar(producto))} />

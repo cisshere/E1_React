@@ -53,7 +53,9 @@ const Navbar = () => {
     setIsOpen(false);
   };
 
-
+  const totalDeCompra = itemsCarrito.reduce((acc, producto) => {
+    return (acc += producto.precio * producto.cantidad)
+  }, 0);
 
   return (
     <>
@@ -95,7 +97,7 @@ const Navbar = () => {
               {itemsCarrito.length !== 0 && (
                 <BelowCarrito>
                   <p style={{ border: "1px solid", margin: "0 4rem" }}>
-                    Total $
+                    Total $<span>{totalDeCompra.toLocaleString("es")}</span>
                   </p>
                   <ButtonCart onClick={comprarCarrito} >Comprar</ButtonCart>
                   <ButtonCart onClick={borrarTodoCarrito}>Borrar todo</ButtonCart>
