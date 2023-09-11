@@ -3,12 +3,14 @@ import styled from "styled-components";
 export const ProductoCarrito = styled.div`
   display: flex;
   justify-content: center;
+  border: 1px solid;
 `;
 
 export const ProdImgCarrito = styled.img`
   width: 5rem;
   height: 5rem;
-  border: 1px solid black;
+  margin-top: 0.7rem;
+  margin-left: 0.5rem;
 `;
 
 export const DatosProductCarrito = styled.div`

@@ -102,7 +102,6 @@ export const Carrito = styled.div`
     flex-direction: column;
     text-align: center;
     position: absolute;
-    border: 1px solid;
     background-color: #c9bbd1;
     width: 18rem;
     top: 4.9rem;
@@ -110,6 +109,7 @@ export const Carrito = styled.div`
     padding: 0.5rem 0 1rem 0.4rem;
     gap: 1rem;
     border: 0.06rem solid black;
+    height: 30rem;
 
     @media (min-width: 1368px) {
       right: auto;
@@ -123,4 +123,5 @@ export const ContenedorCarrito = styled.div`
   flex-direction: column;
   overflow-x: hidden;
   max-height: 20rem;
+  height: 20rem;
 `;
