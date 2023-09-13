@@ -25,6 +25,7 @@ const Contacto = () => {
     },
   });
 
+  <p>hola</p>
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit();
