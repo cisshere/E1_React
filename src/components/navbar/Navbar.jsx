@@ -88,6 +88,9 @@ const Navbar = () => {
                 <BsCart4 />
                 Mi carrito
               </p>
+              {itemsCarrito.length === 0 && (
+                <p>No hay productos en el carrito</p>
+              )}
               <ContenedorCarrito>
                 {itemsCarrito.map((producto) => (
                   <CarritoContainer {...producto} key={producto.id} />
@@ -102,10 +105,6 @@ const Navbar = () => {
                   <ButtonCart onClick={comprarCarrito} >Comprar</ButtonCart>
                   <ButtonCart onClick={borrarTodoCarrito}>Borrar todo</ButtonCart>
                 </BelowCarrito>
-              )}
-
-              {itemsCarrito.length === 0 && (
-                <p>No hay productos en el carrito</p>
               )}
             </Carrito>
           </BtnNavbar>

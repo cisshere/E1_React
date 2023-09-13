@@ -106,7 +106,7 @@ export const Carrito = styled.div`
     width: 18rem;
     top: 4.9rem;
     right: 0%;
-    padding: 0.5rem 0 1rem 0.4rem;
+    padding: 1rem 0.4rem;
     gap: 1rem;
     border: 0.06rem solid black;
     height: 30rem;
