@@ -1,35 +1,83 @@
 import React from "react";
-import { ContactSection, ContenedorContact,Formulario, SecctionForm, TextAreaStyle, InputStyle, Submit } from "./ContactoStyled";
+import { Formik, useFormik } from "formik";
+
+import {
+  ContactSection,
+  ContenedorContact,
+  Formulario,
+  SecctionForm,
+  TextAreaStyle,
+  InputStyle,
+  Submit,
+} from "./ContactoStyled";
 
 const Contacto = () => {
+  const { values, handleChange, handleSubmit } = useFormik({
+    initialValues: {
+      name: "",
+      lastName: "",
+      email: "",
+      asunto: "",
+    },
+    onSubmit: (values, {resetForm} ) =>{
+      console.log(values)
+      resetForm();
+    },
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit();
+  }
+
   return (
     <ContactSection>
       <ContenedorContact>
-        <h2 style={{textAlign: "center", marginBottom: "3rem" }} >Contacto</h2>
+        <h2 style={{ textAlign: "center", marginBottom: "3rem" }}>Contacto</h2>
         <Formulario>
 
           <SecctionForm>
             <label>Nombre:</label>
-            <InputStyle type="text" name="nombre" placeholder="Ingrese su nombre"/>
+            <InputStyle
+              type="text"
+              name="name"
+              value={values.name}
+              onChange={handleChange}
+            />
           </SecctionForm>
 
           <SecctionForm>
             <label>Apellido:</label>
-            <InputStyle type="text" name="apellido" placeholder="Ingrese su apellido"/>
+            <InputStyle
+              type="text"
+              name="lastName"
+              value={values.lastName}
+              onChange={handleChange}
+            />
           </SecctionForm>
 
           <SecctionForm>
             <label>Email:</label>
-            <InputStyle type="email" name="email" placeholder="Ingrese su email" />
+            <InputStyle
+              type="email"
+              name="email"
+              value={values.email}
+              onChange={handleChange}
+            />
           </SecctionForm>
 
           <SecctionForm>
             <label>Asunto:</label>
-            <TextAreaStyle cols="30" rows="5" name="asunto" />
+            <TextAreaStyle
+              cols="30"
+              rows="5"
+              name="asunto"
+              value={values.asunto}
+              onChange={handleChange}
+            />
           </SecctionForm>
 
-          <Submit type="submit">Enviar</Submit>
-
+          <Submit type="submit" onSubmit={handleSubmit} >Enviar</Submit>
         </Formulario>
       </ContenedorContact>
     </ContactSection>
