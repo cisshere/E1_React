@@ -41,14 +41,17 @@ const Contacto = () => {
       <ContenedorContact>
         <h2 style={{ textAlign: "center", marginBottom: "3rem" }}>Contacto</h2>
         <Formulario onSubmit={handleSubmit}>
-          <SecctionForm error={errors.name && touched.name}>
+          <SecctionForm>
             <label>Nombre:</label>
             <InputStyle
               type="text"
               name="name"
               {...getFieldProps("name")}
+              error={errors.name && touched.name}
             />
-            {errors.name && touched.name && <span>Este campo es obligatorio</span>}
+            {errors.name && touched.name && (
+              <span>Este campo es obligatorio</span>
+            )}
           </SecctionForm>
 
           <SecctionForm>
@@ -62,11 +65,7 @@ const Contacto = () => {
 
           <SecctionForm>
             <label>Email:</label>
-            <InputStyle
-              type="email"
-              name="email"
-              {...getFieldProps("email")}
-            />
+            <InputStyle type="email" name="email" {...getFieldProps("email")} />
           </SecctionForm>
 
           <SecctionForm>

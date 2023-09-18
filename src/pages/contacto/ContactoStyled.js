@@ -52,8 +52,7 @@ export const InputStyle = styled.input`
   color: black;
   padding: 0.25rem 2.3rem;
   border: none;
-  border-bottom: 0.125rem solid #e1d4d4;
-  border-color: ${({ error }) => (error ? "color:red" : "color:black" )};
+  border-bottom: 0.125rem solid ${({ error }) => (error ? "red" : "#e1d4d4")};
 
   @media (max-width: 510px) {
     font-size: 1rem;
