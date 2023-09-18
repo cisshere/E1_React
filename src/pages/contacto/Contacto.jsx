@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, useFormik } from "formik";
+import { Formik, Field, ErrorMessage } from "formik";
 
 import {
   ContactSection,
@@ -9,6 +9,7 @@ import {
   TextAreaStyle,
   InputStyle,
   Submit,
+  ErrorStyled,
 } from "./ContactoStyled";
 import * as Yup from "yup";
 
@@ -22,7 +23,7 @@ const validationSchema = Yup.object({
 });
 
 const Contacto = () => {
-  const { getFieldProps, handleSubmit, errors, touched } = useFormik({
+  /* const { getFieldProps, handleSubmit, errors, touched } = useFormik({
     initialValues: {
       name: "",
       lastName: "",
@@ -34,52 +35,73 @@ const Contacto = () => {
       console.log(values);
       resetForm();
     },
-  });
+  }); */
 
   return (
     <ContactSection>
       <ContenedorContact>
         <h2 style={{ textAlign: "center", marginBottom: "3rem" }}>Contacto</h2>
-        <Formulario onSubmit={handleSubmit}>
-          <SecctionForm>
-            <label>Nombre:</label>
-            <InputStyle
-              type="text"
-              name="name"
-              {...getFieldProps("name")}
-              error={errors.name && touched.name}
-            />
-            {errors.name && touched.name && (
-              <span>Este campo es obligatorio</span>
-            )}
-          </SecctionForm>
 
-          <SecctionForm>
-            <label>Apellido:</label>
-            <InputStyle
-              type="text"
-              name="lastName"
-              {...getFieldProps("lastName")}
-            />
-          </SecctionForm>
+        <Formik
+          initialValues={{
+            name: "",
+            lastName: "",
+            email: "",
+            asunto: "",
+            as: "",
+          }}
+          validationSchema={validationSchema}
+          onSubmit={(values, { resetForm }) => {
+            console.log(values);
+            resetForm();
+          }}
+        >
+          {({ touched, errors }) => (
+            <Formulario>
+              <SecctionForm>
+                <label>Nombre:</label>
 
-          <SecctionForm>
-            <label>Email:</label>
-            <InputStyle type="email" name="email" {...getFieldProps("email")} />
-          </SecctionForm>
+                <Field
+                  as={InputStyle}
+                  type="text"
+                  name="name"
+                  $error={errors.name && touched.name}
+                />
+                <ErrorMessage name="name" component={ErrorStyled} />
+              </SecctionForm>
 
-          <SecctionForm>
-            <label>Asunto:</label>
-            <TextAreaStyle
-              cols="30"
-              rows="5"
-              name="asunto"
-              {...getFieldProps("asunto")}
-            />
-          </SecctionForm>
+              <SecctionForm>
+                <label>Apellido:</label>
+                <Field
+                  as={InputStyle}
+                  type="text"
+                  name="lastName"
+                  $error={errors.lastName && touched.lastName}
+                />
+                <ErrorMessage name="lastName" component={ErrorStyled} />
+              </SecctionForm>
 
-          <Submit type="submit">Enviar</Submit>
-        </Formulario>
+              <SecctionForm>
+                <label>Email:</label>
+                <Field
+                  as={InputStyle}
+                  type="email"
+                  name="email"
+                  $error={errors.email && touched.email}
+                />
+                <ErrorMessage name="email" component={ErrorStyled} />
+              </SecctionForm>
+
+              <SecctionForm>
+                <label>Asunto:</label>
+                <Field as={TextAreaStyle} cols="30" rows="5" name="asunto" />
+                <ErrorMessage name="asunto" component={ErrorStyled} />
+              </SecctionForm>
+
+              <Submit type="submit">Enviar</Submit>
+            </Formulario>
+          )}
+        </Formik>
       </ContenedorContact>
     </ContactSection>
   );

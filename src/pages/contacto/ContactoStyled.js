@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Form } from "formik";
 
 export const ContactSection = styled.section`
   display: flex;
@@ -22,7 +23,7 @@ export const ContenedorContact = styled.div`
   }
 `;
 
-export const Formulario = styled.form`
+export const Formulario = styled(Form)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,14 +46,13 @@ export const TextAreaStyle = styled.textarea`
   }
 `;
 
-
 export const InputStyle = styled.input`
   text-align: center;
   font-size: 1.125rem;
   color: black;
   padding: 0.25rem 2.3rem;
   border: none;
-  border-bottom: 0.125rem solid ${({ error }) => (error ? "red" : "#e1d4d4")};
+  border: 0.2rem solid ${(props) => (props.$error ? "red" : "#dcd0e3")};
 
   @media (max-width: 510px) {
     font-size: 1rem;
@@ -63,4 +63,8 @@ export const Submit = styled.button`
   background-color: #dcd0e3;
   cursor: pointer;
   padding: 0.4rem 1rem;
+`;
+
+export const ErrorStyled = styled.span`
+  color: red;
 `;
