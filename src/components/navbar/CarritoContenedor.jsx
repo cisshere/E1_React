@@ -19,7 +19,6 @@ import { CambiarCantidad, DatosProductCarrito, ProdImgCarrito, ProductoCarrito, 
       <DatosProductCarrito>
         <p style={{ fontWeight: "bold" }}>{nombre} </p>
         <p> ${precio.toLocaleString("es")}</p>
-        <p> subtotal = ${(precio * cantidad).toLocaleString("es")}</p>
         <CambiarCantidad>
           <ButtonCambiarCantidad>
             <GrFormSubtract onClick={() => dispatchRedux(decrementar(producto))} />

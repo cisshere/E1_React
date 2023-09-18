@@ -4,20 +4,19 @@ export const ProductoCarrito = styled.div`
   display: flex;
   justify-content: center;
   border: 1px solid;
+  padding: 0.6rem;
+  margin: 0.3rem;
 `;
 
 export const ProdImgCarrito = styled.img`
   width: 5rem;
   height: 5rem;
-  margin-top: 0.7rem;
-  margin-left: 0.5rem;
 `;
 
 export const DatosProductCarrito = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
   width: 10rem;
 `;

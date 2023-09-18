@@ -118,7 +118,7 @@ export const Carrito = styled.div`
 `;
 
 export const ContenedorCarrito = styled.div`
-  gap: 1.3rem;
+  gap: 0.3rem;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;

@@ -45,6 +45,7 @@ export const TextAreaStyle = styled.textarea`
   }
 `;
 
+
 export const InputStyle = styled.input`
   text-align: center;
   font-size: 1.125rem;
@@ -52,6 +53,7 @@ export const InputStyle = styled.input`
   padding: 0.25rem 2.3rem;
   border: none;
   border-bottom: 0.125rem solid #e1d4d4;
+  border-color: ${({ error }) => (error ? "color:red" : "color:black" )};
 
   @media (max-width: 510px) {
     font-size: 1rem;
