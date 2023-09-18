@@ -22,7 +22,7 @@ const validationSchema = Yup.object({
 });
 
 const Contacto = () => {
-  const { values, handleChange, handleSubmit, errors, touched } = useFormik({
+  const { getFieldProps, handleSubmit, errors, touched } = useFormik({
     initialValues: {
       name: "",
       lastName: "",
@@ -41,16 +41,14 @@ const Contacto = () => {
       <ContenedorContact>
         <h2 style={{ textAlign: "center", marginBottom: "3rem" }}>Contacto</h2>
         <Formulario onSubmit={handleSubmit}>
-          <SecctionForm>
+          <SecctionForm error={errors.name && touched.name}>
             <label>Nombre:</label>
             <InputStyle
               type="text"
               name="name"
-              isError={errors.name && touched.name}
-              value={values.name}
-              onChange={handleChange}
+              {...getFieldProps("name")}
             />
-            {isError && <span>Este campo es obligatorio</span>}
+            {errors.name && touched.name && <span>Este campo es obligatorio</span>}
           </SecctionForm>
 
           <SecctionForm>
@@ -58,8 +56,7 @@ const Contacto = () => {
             <InputStyle
               type="text"
               name="lastName"
-              value={values.lastName}
-              onChange={handleChange}
+              {...getFieldProps("lastName")}
             />
           </SecctionForm>
 
@@ -68,8 +65,7 @@ const Contacto = () => {
             <InputStyle
               type="email"
               name="email"
-              value={values.email}
-              onChange={handleChange}
+              {...getFieldProps("email")}
             />
           </SecctionForm>
 
@@ -79,8 +75,7 @@ const Contacto = () => {
               cols="30"
               rows="5"
               name="asunto"
-              value={values.asunto}
-              onChange={handleChange}
+              {...getFieldProps("asunto")}
             />
           </SecctionForm>
 
