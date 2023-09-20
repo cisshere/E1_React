@@ -23,20 +23,6 @@ const validationSchema = Yup.object({
 });
 
 const Contacto = () => {
-  /* const { getFieldProps, handleSubmit, errors, touched } = useFormik({
-    initialValues: {
-      name: "",
-      lastName: "",
-      email: "",
-      asunto: "",
-    },
-    validationSchema,
-    onSubmit: (values, { resetForm }) => {
-      console.log(values);
-      resetForm();
-    },
-  }); */
-
   return (
     <ContactSection>
       <ContenedorContact>

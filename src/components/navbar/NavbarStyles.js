@@ -56,7 +56,7 @@ export const NavItem = styled(NavLink)`
 export const LogoMarca = styled.img`
   height: 4.3rem;
   width: 10rem;
-  margin-right: 20%;
+  margin-right: 15rem;
 
   @media (min-width: 1368px) {
     margin: 0;
