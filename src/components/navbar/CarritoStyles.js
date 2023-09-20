@@ -1,16 +1,19 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const ProductoCarrito = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   border: 1px solid;
-  padding: 0.6rem;
-  margin: 0.3rem;
+  padding: 3%;
+  align-items: center;
+  margin: 1%;
+  background-color: #c9bbd1;
 `;
 
 export const ProdImgCarrito = styled.img`
-  width: 5rem;
-  height: 5rem;
+  width: 30%;
+  border: solid 1px;
 `;
 
 export const DatosProductCarrito = styled.div`
@@ -43,4 +46,13 @@ export const BelowCarrito = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+`;
+
+export const LinkCarrito = styled(NavLink)`
+  background-color: #f7d2f5;
+  padding: 0.3rem 0rem;
+  letter-spacing: 1px;
+  margin: 0 4rem;
+  cursor: pointer;
+  border: 2px solid;
 `;

@@ -14,7 +14,7 @@ import {
   Carrito,
   ContenedorCarrito,
 } from "./NavbarStyles";
-import { ButtonCart, BelowCarrito } from "./CarritoStyles";
+import { ButtonCart, BelowCarrito, LinkCarrito } from "./CarritoStyles";
 import { BiSolidUserRectangle } from "react-icons/bi";
 import { FaShoppingCart } from "react-icons/fa";
 import { SlMenu } from "react-icons/sl";
@@ -104,6 +104,7 @@ const Navbar = () => {
                   </p>
                   <ButtonCart onClick={comprarCarrito} >Comprar</ButtonCart>
                   <ButtonCart onClick={borrarTodoCarrito}>Borrar todo</ButtonCart>
+                  <LinkCarrito to="checkout" >Ir al carrito </LinkCarrito>
                 </BelowCarrito>
               )}
             </Carrito>

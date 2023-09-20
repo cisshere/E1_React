@@ -9,6 +9,7 @@ import Home from "../pages/home/Home";
 import Contacto from "../pages/contacto/Contacto";
 import ProductosSecction from "../pages/products/Productos";
 import Beneficios from "../pages/beneficios/Beneficios";
+import { CarritoPage } from "../pages/carrito/CarritoPage";
 
 const Routes = () => {
   return (
@@ -19,6 +20,7 @@ const Routes = () => {
           <Route path="productos" element={<ProductosSecction />} />
           <Route path="beneficios" element={<Beneficios />} />
           <Route path="contacto" element={<Contacto />} />
+          <Route path="checkout" element={<CarritoPage />} />
 
           <Route path="*" element={<h2>Error!</h2>} />
         </ReactDomRoutes>
