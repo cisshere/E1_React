@@ -8,7 +8,6 @@ export const GlobalStyles = createGlobalStyle`
     body {
       margin: 0;
       padding: 0;
-      text-decoration: none;
       font-family: 'ABeeZee', sans-serif;
     }
     h4 {
@@ -25,9 +24,6 @@ export const GlobalStyles = createGlobalStyle`
     }
     a:visited {
     color: black;
-    }
-    a:hover{
-      text-decoration: underline;
     }
     li {
     list-style: none;

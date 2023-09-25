@@ -51,6 +51,9 @@ export const NavListPrincipal = styled.ul`
 
 export const NavItem = styled(NavLink)`
   font-size: 1.3rem;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const LogoMarca = styled.img`

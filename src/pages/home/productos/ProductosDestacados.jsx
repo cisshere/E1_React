@@ -15,8 +15,7 @@ const VerMasProductos = styled(NavLink)`
   border: 2px solid;
 
   &:hover {
-    padding: 1rem;
-    background-color: #9d4698;
+    padding: 0.8rem;
   }
 `;
 

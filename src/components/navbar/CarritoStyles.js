@@ -35,6 +35,7 @@ export const ButtonCart = styled.button`
   letter-spacing: 1px;
   margin: 0 4rem;
   cursor: pointer;
+  font-size: 0.813rem;
 `;
 
 export const ButtonCambiarCantidad = styled.button`
@@ -55,4 +56,6 @@ export const LinkCarrito = styled(NavLink)`
   margin: 0 4rem;
   cursor: pointer;
   border: 2px solid;
+  font-size: 0.813rem;
+  text-decoration: none;
 `;
