@@ -23,7 +23,7 @@ import { CambiarCantidad, DatosProductCarrito, ProdImgCarrito, ProductoCarrito, 
           <ButtonCambiarCantidad>
             <GrFormSubtract onClick={() => dispatchRedux(decrementar(producto))} />
           </ButtonCambiarCantidad>
-          <p>{producto.cantidad}</p>
+          <p>{cantidad}</p>
           <ButtonCambiarCantidad>
             <GrFormAdd onClick={() => dispatchRedux(incrementar(producto))} />
           </ButtonCambiarCantidad>
