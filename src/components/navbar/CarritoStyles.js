@@ -5,9 +5,9 @@ export const ProductoCarrito = styled.div`
   display: flex;
   justify-content: space-evenly;
   border: 1px solid;
-  padding: 3%;
+  padding: 0.3rem;
   align-items: center;
-  margin: 1%;
+  margin: 0.2rem;
   background-color: #c9bbd1;
 `;
 
