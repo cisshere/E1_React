@@ -73,7 +73,7 @@ const Navbar = () => {
             </NavListPrincipal>
           </MenuStyled>
 
-          <NavItem to="/"> <LogoMarca src="./assets/img/logo.png" alt="logo" /></NavItem>
+          <NavItem to="Login"> <LogoMarca src="./assets/img/logo.png" alt="logo" /></NavItem>
 
           <BtnNavbar>
             <LinkContainerInicioSesion href="#">
