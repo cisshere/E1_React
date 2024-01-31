@@ -76,7 +76,7 @@ export const BtnNavbar = styled.div`
   gap: 1rem;
 `;
 
-export const LinkContainerInicioSesion = styled.a`
+export const LinkLogin = styled(NavLink)`
   display: flex;
   font-size: 2.2rem;
 `;

@@ -16,6 +16,7 @@ export const ContenedorContact = styled.div`
   background-size: cover;
   background-position: center;
   padding: 2rem 5rem;
+  margin-bottom: 1rem;
 
   @media (max-width: 475px) {
     padding: 2rem 0.3rem;

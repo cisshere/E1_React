@@ -6,7 +6,7 @@ import {
   MenuStyled,
   NavListPrincipal,
   BtnNavbar,
-  LinkContainerInicioSesion,
+  LinkLogin,
   ButtonCartLogo,
   ButtonMenu,
   LogoMarca,
@@ -73,12 +73,12 @@ const Navbar = () => {
             </NavListPrincipal>
           </MenuStyled>
 
-          <NavItem to="login"> <LogoMarca src="./assets/img/logo.png" alt="logo" /></NavItem>
+          <NavItem to="/login"> <LogoMarca src="./assets/img/logo.png" alt="logo" /></NavItem>
 
           <BtnNavbar>
-            <LinkContainerInicioSesion href="#">
+            <LinkLogin to="/login">
               <BiSolidUserRectangle />
-            </LinkContainerInicioSesion>
+            </LinkLogin>
             <ButtonCartLogo onClick={() => dispatch({ type: "toggle_cart" })}>
               <FaShoppingCart />
             </ButtonCartLogo>

@@ -8,7 +8,6 @@ export const FooterContenedor = styled.section`
   color: white;
   background-color: #d0acd3;
   gap: 3rem;
-  margin-top: 3rem;
   padding: 2rem;
 
   @media (max-width: 650px) {

@@ -10,24 +10,33 @@ import {
   ErrorStyled,
   NavItem,
   NavHome,
-} from "./LoginStyled";
+} from "../Login/LoginStyled";
 import * as Yup from "yup";
 
 const validationSchema = Yup.object({
   name: Yup.string().trim().required("Este campo es requerido"),
-  contraseña: Yup.string().trim().required("Este campo es requerido"),
+  lastName: Yup.string().trim().required("Este campo es requerido"),
+  email: Yup.string()
+    .email("Correo electronico invalido")
+    .required("Este campo es requerido"),
+  password: Yup.string()
+    .required("Contraseña es requerida")
+    .min(8, "minimo 8 caracteres")
+    .max(20, "maximo 20 caracteres"),
 });
 
-const Login = () => {
+const SignIn = () => {
   return (
     <LoginSection>
       <ContenedorLogin>
-        <h2>Iniciar Sesión</h2>
+        <h2>Crear cuenta</h2>
 
         <Formik
           initialValues={{
             name: "",
-            contraseña: "",
+            lastName: "",
+            email: "",
+            password: "",
           }}
           validationSchema={validationSchema}
           onSubmit={(values, { resetForm }) => {
@@ -50,14 +59,38 @@ const Login = () => {
               </SecctionForm>
 
               <SecctionForm>
+                <label>Apellido:</label>
+
+                <Field
+                  as={InputStyle}
+                  type="text"
+                  name="lastName"
+                  $error={errors.lastName && touched.lastName}
+                />
+                <ErrorMessage name="lastName" component={ErrorStyled} />
+              </SecctionForm>
+
+              <SecctionForm>
+                <label>email:</label>
+
+                <Field
+                  as={InputStyle}
+                  type="text"
+                  name="email"
+                  $error={errors.email && touched.email}
+                />
+                <ErrorMessage name="email" component={ErrorStyled} />
+              </SecctionForm>
+
+              <SecctionForm>
                 <label>Contraseña:</label>
                 <Field
                   as={InputStyle}
                   type="text"
-                  name="contraseña"
-                  $error={errors.contraseña && touched.contraseña}
+                  name="password"
+                  $error={errors.password && touched.password}
                 />
-                <ErrorMessage name="contraseña" component={ErrorStyled} />
+                <ErrorMessage name="password" component={ErrorStyled} />
               </SecctionForm>
 
               <Submit type="submit">Iniciar Sesión</Submit>
@@ -65,9 +98,7 @@ const Login = () => {
           )}
         </Formik>
 
-        <a>¿Olvidaste tu contraseña?</a>
-
-        <NavItem to="/SignIn">¿No tienes cuenta? Registrate</NavItem>
+        <NavItem to="/login">¿Ya tienes una cuenta?</NavItem>
 
         <NavHome to="/">Volver al home</NavHome>
       </ContenedorLogin>
@@ -75,4 +106,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignIn;

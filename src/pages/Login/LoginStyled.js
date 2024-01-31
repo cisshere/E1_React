@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Form } from "formik";
+import { NavLink } from "react-router-dom";
 
 export const LoginSection = styled.section`
   display: flex;
@@ -9,14 +10,17 @@ export const LoginSection = styled.section`
 `;
 
 export const ContenedorLogin = styled.div`
-border: 0.2rem solid #afafaf;
-  background-color: #dcd0e3;
+  font-weight: bold;
+  font-size: 17px;
+  background-image: url(./assets/img/joyas/login.jpg);
+  background-size: cover;
   background-position: center;
   padding: 2rem 5rem;
+  margin: 2rem;
   display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: center;
 
   @media (max-width: 475px) {
     padding: 1rem 0;
@@ -52,7 +56,8 @@ export const InputStyle = styled.input`
 `;
 
 export const Submit = styled.button`
-  background-color: #dcd0e3;
+  font-weight: bold;
+  font-size: 14px;
   cursor: pointer;
   padding: 0.4rem 1rem;
 `;
@@ -60,3 +65,16 @@ export const Submit = styled.button`
 export const ErrorStyled = styled.span`
   color: red;
 `;
+
+export const NavItem = styled(NavLink)`
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
+export const NavHome = styled(NavItem)`
+padding: 0.5rem;
+    background-color: #cd89c2;
+    margin: 0 4rem;
+    border-radius: 15px;
+`
